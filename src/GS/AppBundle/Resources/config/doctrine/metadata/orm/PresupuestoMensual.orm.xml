@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PresupuestoMensual" table="presupuesto_mensual">
+    <indexes>
+      <index name="FK_PROYECTO_PRESUPUESTO_MENSUAL" columns="PROYECTO"/>
+    </indexes>
+    <id name="idPresupuestoMensual" type="decimal" column="ID_PRESUPUESTO_MENSUAL">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mesPresupuesto" type="integer" column="MES_PRESUPUESTO" nullable="false"/>
+    <field name="anioPresupuesto" type="integer" column="ANIO_PRESUPUESTO" nullable="false"/>
+    <field name="presupuesto" type="decimal" column="PRESUPUESTO" precision="8" scale="2" nullable="false"/>
+    <field name="usuarioCreacion" type="string" column="USUARIO_CREACION" length="50" nullable="false"/>
+    <field name="fechaCreacion" type="datetime" column="FECHA_CREACION" nullable="false"/>
+    <field name="usuarioModificacion" type="string" column="USUARIO_MODIFICACION" length="50" nullable="true"/>
+    <field name="fechaModificacion" type="datetime" column="FECHA_MODIFICACION" nullable="true"/>
+    <many-to-one field="proyecto" target-entity="Proyecto">
+      <join-columns>
+        <join-column name="PROYECTO" referenced-column-name="ID_PROYECTO"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

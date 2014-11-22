@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="UnidadMedida" table="unidad_medida">
+    <id name="idUnidad" type="decimal" column="ID_UNIDAD">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreUnidad" type="text" column="NOMBRE_UNIDAD" nullable="false"/>
+    <field name="descripcionUnidad" type="text" column="DESCRIPCION_UNIDAD" nullable="false"/>
+  </entity>
+</doctrine-mapping>

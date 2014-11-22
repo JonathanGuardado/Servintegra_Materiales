@@ -1,0 +1,42 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+
+<section>
+    <div class="naranja space">&nbsp;</div>
+    <div class="space-line">&nbsp;</div>
+    <div class="naranja space-line">&nbsp;</div>
+</section>
+<section>
+    <article class="w100 gris_claro-textura space">&nbsp;</article>
+    <article class="w100 gris_claro-textura space">&nbsp;</article>  
+    <article class="w100 gris_claro-textura space"> &nbsp;</article>
+    <article class="w100 gris_claro-textura space"> &nbsp;</article>
+    <article class="w100 gris_claro-textura space border-colorgray">&nbsp;</article>  
+</section>
+
+<div class="container">
+
+    <section> 
+        <div class="L w50">
+            <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 
+        </div>
+            <br/>
+        <center>
+    {{ form(formulario, {'attr': {'class': ' formulario'}}) }}
+            </center>
+
+            <div class="L w100">
+                <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 
+            </div>
+        </section>
+
+    </div> <!-- /container -->
+
+
+
+{% endblock %}

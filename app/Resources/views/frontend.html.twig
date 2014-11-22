@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<section class="w100 L content_head">
+    <article class="w100 L gris_claro" style="background: black !important;">
+        <div class="w100 L naranja">
+            <div class="space-min">&nbsp;</div>
+        </div>
+        <div class="w50 L">
+            <div class="w100 L logo_p T1 L5 B1"></div>
+        </div>
+        <div class="w100 L azul_claro">
+            <div class="space-min">&nbsp;</div>
+        </div>
+    </article>
+</section>
+
+<article class="L w100">
+    <!-- menu --> 
+    <nav class="R R1 navbar navbar-default">
+        <!-- nav-collapse -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a href="{{ path('app_homepage') }}">Inicio</a> </li>
+                <li> <a href="proyectos.php">Maestro de Proyectos</a> </li>
+<!--                <li> <a href="./calculo/">Calcular</a> </li>-->
+                <li><a href="materiales.php">Maestro de Materiales</a></li>
+                <li><a href="movimientos.php">Movimientos</a></li>
+                <li> <a href="autorizacion.php">Autorizaci&oacute;n de Sobregiros</a></li>
+            </ul>
+        </div>
+        <!-- nav-collapse --> 
+    </nav>
+</article>
+
+<section class="contentsection" >
+    {% block main %}{% endblock %}
+</section>
+
+{% endblock %}

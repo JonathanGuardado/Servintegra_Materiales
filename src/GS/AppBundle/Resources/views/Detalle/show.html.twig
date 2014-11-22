@@ -1,0 +1,32 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+
+<div class="container">
+
+    <h1>Detalle {{ detalle.proyecto }}</h1>
+
+    <dl class="dl-horizontal">
+        <dt>Nombre</dt>
+        <dd>{{ detalle.proyecto }}</dd>
+
+        <dt>Descripcion</dt>
+        <dd>{{ detalle.observacion }}</dd>
+
+        <hr>
+
+        <dt>&nbsp;</dt>
+        <dd>
+            <a href="{{ path('detalle_edit', {'id': detalle.id}) }}" class="btn btn-warning">Editar</a>
+            <a href="{{ path('detalle_delete', {'id': detalle.id}) }}" class="btn btn-danger">Eliminar</a>
+        </dd>
+
+    </dl>
+
+</div> <!-- /container -->
+
+{% endblock %}

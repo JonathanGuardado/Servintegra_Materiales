@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="UnidadNegocio" table="unidad_negocio">
+    <id name="idUnidadNegocio" type="decimal" column="ID_UNIDAD_NEGOCIO">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreUnidadNegocio" type="text" column="NOMBRE_UNIDAD_NEGOCIO" nullable="false"/>
+    <field name="descripcionUnidadNegocio" type="text" column="DESCRIPCION_UNIDAD_NEGOCIO" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OrdenSalida" table="orden_salida">
+    <indexes>
+      <index name="FK_PROYECTO_ORDEN_SALIDA" columns="PROYECTO"/>
+    </indexes>
+    <id name="idOrden" type="decimal" column="ID_ORDEN">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="anioOrden" type="integer" column="ANIO_ORDEN" nullable="false"/>
+    <field name="mesOrden" type="integer" column="MES_ORDEN" nullable="false"/>
+    <field name="totalOrden" type="decimal" column="TOTAL_ORDEN" precision="10" scale="2" nullable="false"/>
+    <field name="recibioOrden" type="string" column="RECIBIO_ORDEN" length="50" nullable="false"/>
+    <field name="entregoOrden" type="string" column="ENTREGO_ORDEN" length="50" nullable="false"/>
+    <field name="autorizoOrden" type="string" column="AUTORIZO_ORDEN" length="50" nullable="false"/>
+    <field name="usuarioCreacion" type="string" column="USUARIO_CREACION" length="50" nullable="false"/>
+    <field name="fechaCreacion" type="datetime" column="FECHA_CREACION" nullable="false"/>
+    <field name="usuarioModificacion" type="string" column="USUARIO_MODIFICACION" length="50" nullable="true"/>
+    <field name="fechaModificacion" type="datetime" column="FECHA_MODIFICACION" nullable="true"/>
+    <many-to-one field="proyecto" target-entity="Proyecto">
+      <join-columns>
+        <join-column name="PROYECTO" referenced-column-name="ID_PROYECTO"/>
+      </join-columns>
+    </many-to-one>
+    <one-to-many field="detalle" target-entity="Detalle">
+      <join-columns>
+        <join-column name="detalle_orden_salida" referenced-column-name="ID_DETALLE_ORDEN"/>
+      </join-columns>
+    </one-to-many>
+  </entity>
+</doctrine-mapping>

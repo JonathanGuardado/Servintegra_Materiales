@@ -1,0 +1,192 @@
+.image_index{
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 411px;
+}
+.img_tiempo_pleno{
+    background-image: url(../images/banner_tiempo_pleno.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80px;
+}
+.servince_1{
+    background-image: url(../images/int01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.servince_2{
+    background-image: url(../images/ofic01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.servince_3{
+    background-image: url(../images/lup01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.servince_4{
+    background-image: url(../images/calen01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.servince_5{
+    background-image: url(../images/doc01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.servince_6{
+    background-image: url(../images/gra01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110px;
+    width: 136px;
+}
+.img_ninos{
+    background-image: url(../images/ninos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 238px;
+}
+.img_ninos2{
+    background-image: url(../images/ninos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 238px;
+}
+.nopadding{
+    padding: 0px !important;
+}
+.text_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 0.5%;
+}
+
+.height_blank2{
+    padding: 1%;
+    min-height: 50px;
+    width:100%;
+    
+}
+
+.height_blank{
+    padding: 5%;
+    min-height: 400px;
+    width:100%;   
+}
+
+.img_blank3{
+    overflow: hidden;
+    min-height: 120px;
+    width:320px;
+    background: url(../images/17-forosal2.png);
+}
+
+.img_map{
+    background: url(../images/piezas_fondo.png) repeat-x 0 0 white;
+    overflow: hidden;
+    min-height: 120px;
+    width:100%;
+    font-size: 11px;
+}
+
+.img_blank3a{
+    background: url(../images/piezas_fondo.png) repeat-x 0 0 white;
+    overflow: hidden;
+    height: 120px;
+    width:100%;
+}
+
+.img_blank3a a{
+    text-decoration: none;
+    color:white;
+}
+
+.img_blank3a h5{
+   font-size: 20px !important;
+}
+
+.img_blank4{
+    overflow: hidden;
+    min-height: 120px;
+    width:320px;
+    background: url(../images/17-forosal.png);
+}
+
+.img_blank4a{
+    background: url(../images/piezas_fondo.png) repeat-x 0 0 white;
+    overflow: hidden;
+    height: 120px;
+    width:100%;
+}
+
+.img_blank4a a{
+    text-decoration: none;
+    color:white;
+}
+
+.img_blank4a h5{
+   font-size: 20px !important;
+}
+ 
+.img_blank5{
+    overflow: hidden;
+    min-height: 120px;
+    width:320px;
+    background: url(../images/17-forosal3.png);
+}
+
+.img_blank5a{
+    background: url(../images/piezas_fondo.png) repeat-x 0 0 white;
+    overflow: hidden;
+    height: 120px;
+    width:100%;
+}
+
+.img_blank5a a{
+    text-decoration: none;
+    color:white;
+}
+
+.img_blank5a h5{
+   font-size: 20px !important;
+}
+
+.img_blank6{
+    overflow: hidden;
+    min-height: 120px;
+    width:320px;
+    background: url(../images/17-forosal4.png);
+}
+
+.img_blank6a{
+    background: url(../images/piezas_fondo.png) repeat-x 0 0 white;
+    overflow: hidden;
+    height: 120px;
+    width:100%;
+}
+
+.img_blank6a a{
+    text-decoration: none;
+    color:white;
+}
+
+.img_blank6a h5{
+   font-size: 20px !important;
+}
+
+.height_blank2 a{
+    text-decoration: none;
+    color: #5a5a5a;
+}

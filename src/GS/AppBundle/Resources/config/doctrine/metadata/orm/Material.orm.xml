@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Material" table="material">
+    <indexes>
+      <index name="FK_CATEGORIA_MATERIAL" columns="CATEGORIA"/>
+      <index name="FK_UNIDAD_MEDIDA_MATERIAL" columns="UNIDAD_MEDIDA"/>
+    </indexes>
+    <id name="idMaterial" type="decimal" column="ID_MATERIAL">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreMaterial" type="text" column="NOMBRE_MATERIAL" nullable="false"/>
+    <field name="precioMaterial" type="decimal" column="PRECIO_MATERIAL" precision="10" scale="2" nullable="false"/>
+    <field name="costoMaterial" type="decimal" column="COSTO_MATERIAL" precision="10" scale="2" nullable="false"/>
+    <field name="existenciaActual" type="float" column="EXISTENCIA_ACTUAL" precision="10" scale="0" nullable="false"/>
+    <field name="cantidadReorden" type="float" column="CANTIDAD_REORDEN" precision="10" scale="0" nullable="false"/>
+    <field name="ubicacion" type="text" column="UBICACION" nullable="false"/>
+    <field name="descripcionUnidad" type="text" column="DESCRIPCION_UNIDAD" nullable="false"/>
+    <field name="usuarioCreacion" type="string" column="USUARIO_CREACION" length="50" nullable="false"/>
+    <field name="fechaCreacion" type="datetime" column="FECHA_CREACION" nullable="false"/>
+    <field name="usuarioModificacion" type="string" column="USUARIO_MODIFICACION" length="50" nullable="true"/>
+    <field name="fechaModificacion" type="datetime" column="FECHA_MODIFICACION" nullable="true"/>
+    <many-to-one field="categoria" target-entity="Categoria">
+      <join-columns>
+        <join-column name="CATEGORIA" referenced-column-name="ID_CATEGORIA"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="unidadMedida" target-entity="UnidadMedida">
+      <join-columns>
+        <join-column name="UNIDAD_MEDIDA" referenced-column-name="ID_UNIDAD"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

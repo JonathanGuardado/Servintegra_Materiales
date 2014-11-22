@@ -1,0 +1,56 @@
+.titulo_login{
+    color:white;
+    background:#428bca;
+    position:fixed;
+    left: 65%;
+    z-index: 9;
+    top: 0;
+    -webkit-box-shadow: 0 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px rgba(0,0,0,0.2);
+    padding: 0.8% 2% 0.8% 2%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+.contentsection_login{
+    width:100%;
+    float:left;
+    padding-top: 1%;
+    background:white;
+    min-height: 100px;
+    height: auto;
+    border:2px solid #f0f0f0;
+}
+.content_login{
+    border:1px solid #f0f0f0;
+    background: #f9f9f9;
+    min-height:100px;
+}
+.footer_login{
+    padding: 0% 30% 0% 30%;
+    min-height:1px;
+    width:100%;
+    float:left;
+}
+.button_login{
+    width: 50%;
+    height:auto;
+    float:left;
+    left: 50%;
+    margin-top: 1%;
+    margin-left: 25%;
+}
+.text_login{
+    margin-bottom: 1.5%;
+    text-align: center;
+    color:gray;
+    font-size: 22px;
+    font-weight: bold;
+}
+.fondo_login{
+    background-image: url(../images/fondogeneral.png);
+    height:350px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

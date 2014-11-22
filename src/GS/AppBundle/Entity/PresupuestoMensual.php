@@ -1,0 +1,321 @@
+<?php
+
+namespace GS\AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PresupuestoMensual
+ *
+ * @ORM\Table(name="presupuesto_mensual", indexes={@ORM\Index(name="FK_PROYECTO_PRESUPUESTO_MENSUAL", columns={"PROYECTO"})})
+ * @ORM\Entity
+ */
+class PresupuestoMensual
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_PRESUPUESTO_MENSUAL", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPresupuestoMensual;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="MES_PRESUPUESTO", type="integer", nullable=false)
+     */
+    private $mesPresupuesto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ANIO_PRESUPUESTO", type="integer", nullable=false)
+     */
+    private $anioPresupuesto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PRESUPUESTO", type="decimal", precision=8, scale=2, nullable=false)
+     */
+    private $presupuesto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="USUARIO_CREACION", type="string", length=50, nullable=false)
+     */
+    private $usuarioCreacion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FECHA_CREACION", type="datetime", nullable=false)
+     */
+    private $fechaCreacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="USUARIO_MODIFICACION", type="string", length=50, nullable=true)
+     */
+    private $usuarioModificacion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FECHA_MODIFICACION", type="datetime", nullable=true)
+     */
+    private $fechaModificacion;
+
+    /**
+     * @var \Proyecto
+     *
+     * @ORM\ManyToOne(targetEntity="Proyecto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="PROYECTO", referencedColumnName="ID_PROYECTO")
+     * })
+     */
+    private $proyecto;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * @ORM\OneToMany(targetEntity="Excedente", mappedBy="PresupuestoMensual")
+     */
+    private $excedentes;
+
+    public function __construct() {
+        $this->excedentes = new ArrayCollection();
+        
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get idPresupuestoMensual
+     *
+     * @return string 
+     */
+    public function getIdPresupuestoMensual()
+    {
+        return $this->idPresupuestoMensual;
+    }
+
+    /**
+     * Set mesPresupuesto
+     *
+     * @param integer $mesPresupuesto
+     * @return PresupuestoMensual
+     */
+    public function setMesPresupuesto($mesPresupuesto)
+    {
+        $this->mesPresupuesto = $mesPresupuesto;
+
+        return $this;
+    }
+
+    /**
+     * Get mesPresupuesto
+     *
+     * @return integer 
+     */
+    public function getMesPresupuesto()
+    {
+        return $this->mesPresupuesto;
+    }
+
+    /**
+     * Set anioPresupuesto
+     *
+     * @param integer $anioPresupuesto
+     * @return PresupuestoMensual
+     */
+    public function setAnioPresupuesto($anioPresupuesto)
+    {
+        $this->anioPresupuesto = $anioPresupuesto;
+
+        return $this;
+    }
+
+    /**
+     * Get anioPresupuesto
+     *
+     * @return integer 
+     */
+    public function getAnioPresupuesto()
+    {
+        return $this->anioPresupuesto;
+    }
+
+    /**
+     * Set presupuesto
+     *
+     * @param string $presupuesto
+     * @return PresupuestoMensual
+     */
+    public function setPresupuesto($presupuesto)
+    {
+        $this->presupuesto = $presupuesto;
+
+        return $this;
+    }
+
+    /**
+     * Get presupuesto
+     *
+     * @return string 
+     */
+    public function getPresupuesto()
+    {
+        return $this->presupuesto;
+    }
+
+    /**
+     * Set usuarioCreacion
+     *
+     * @param string $usuarioCreacion
+     * @return PresupuestoMensual
+     */
+    public function setUsuarioCreacion($usuarioCreacion)
+    {
+        $this->usuarioCreacion = $usuarioCreacion;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioCreacion
+     *
+     * @return string 
+     */
+    public function getUsuarioCreacion()
+    {
+        return $this->usuarioCreacion;
+    }
+
+    /**
+     * Set fechaCreacion
+     *
+     * @param \DateTime $fechaCreacion
+     * @return PresupuestoMensual
+     */
+    public function setFechaCreacion($fechaCreacion)
+    {
+        $this->fechaCreacion = $fechaCreacion;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaCreacion
+     *
+     * @return \DateTime 
+     */
+    public function getFechaCreacion()
+    {
+        return $this->fechaCreacion;
+    }
+
+    /**
+     * Set usuarioModificacion
+     *
+     * @param string $usuarioModificacion
+     * @return PresupuestoMensual
+     */
+    public function setUsuarioModificacion($usuarioModificacion)
+    {
+        $this->usuarioModificacion = $usuarioModificacion;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioModificacion
+     *
+     * @return string 
+     */
+    public function getUsuarioModificacion()
+    {
+        return $this->usuarioModificacion;
+    }
+
+    /**
+     * Set fechaModificacion
+     *
+     * @param \DateTime $fechaModificacion
+     * @return PresupuestoMensual
+     */
+    public function setFechaModificacion($fechaModificacion)
+    {
+        $this->fechaModificacion = $fechaModificacion;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaModificacion
+     *
+     * @return \DateTime 
+     */
+    public function getFechaModificacion()
+    {
+        return $this->fechaModificacion;
+    }
+
+    /**
+     * Set proyecto
+     *
+     * @param \GS\AppBundle\Entity\Proyecto $proyecto
+     * @return PresupuestoMensual
+     */
+    public function setProyecto(\GS\AppBundle\Entity\Proyecto $proyecto = null)
+    {
+        $this->proyecto = $proyecto;
+
+        return $this;
+    }
+
+    /**
+     * Get proyecto
+     *
+     * @return \GS\AppBundle\Entity\Proyecto 
+     */
+    public function getProyecto()
+    {
+        return $this->proyecto;
+    }
+
+    /**
+     * Add excedentes
+     *
+     * @param \GS\AppBundle\Entity\Excedente $excedentes
+     * @return PresupuestoMensual
+     */
+    public function addExcedente(\GS\AppBundle\Entity\Excedente $excedentes)
+    {
+        $this->excedentes[] = $excedentes;
+
+        return $this;
+    }
+
+    /**
+     * Remove excedentes
+     *
+     * @param \GS\AppBundle\Entity\Excedente $excedentes
+     */
+    public function removeExcedente(\GS\AppBundle\Entity\Excedente $excedentes)
+    {
+        $this->excedentes->removeElement($excedentes);
+    }
+
+    /**
+     * Get excedentes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getExcedentes()
+    {
+        return $this->excedentes;
+    }
+}

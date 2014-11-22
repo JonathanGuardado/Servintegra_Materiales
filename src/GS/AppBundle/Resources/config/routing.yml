@@ -1,0 +1,117 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Home:index }
+
+categoria_list:
+    path:     /categorias
+    defaults: { _controller: AppBundle:Categoria:index }
+
+categoria_show:
+    path:     /categorias/show/{id}
+    defaults: { _controller: AppBundle:Categoria:show, id: 1 }
+    methods:  [GET]
+    requirements:
+        id:   \d+
+
+categoria_new:
+    path:     /categorias/new
+    defaults: { _controller: AppBundle:Categoria:new }
+
+categoria_edit:
+    path:     /categorias/edit/{id}
+    defaults: { _controller: AppBundle:Categoria:edit }
+    requirements:
+        id:   \d+
+
+categoria_delete:
+    path:     /categorias/delete/{id}
+    defaults: { _controller: AppBundle:Categoria:delete, id: null }
+    requirements:
+        id:   \d+
+
+
+
+proyecto_list:
+    path:     /proyectos
+    defaults: { _controller: AppBundle:Proyecto:index }
+
+proyecto_show:
+    path:     /proyectos/show/{id}
+    defaults: { _controller: AppBundle:Proyecto:show, id: 1 }
+    methods:  [GET]
+    requirements:
+        id:   \d+
+
+proyecto_new:
+    path:     /proyectos/new
+    defaults: { _controller: AppBundle:Proyecto:new }
+
+proyecto_edit:
+    path:     /proyectos/edit/{id}
+    defaults: { _controller: AppBundle:Proyecto:edit }
+    requirements:
+        id:   \d+
+
+proyecto_delete:
+    path:     /proyectos/delete/{id}
+    defaults: { _controller: AppBundle:Proyecto:delete, id: null }
+    requirements:
+        id:   \d+
+
+
+
+material_list:
+    path:     /materiales
+    defaults: { _controller: AppBundle:Material:index }
+
+material_show:
+    path:     /materiales/show/{id}
+    defaults: { _controller: AppBundle:Material:show, id: 1 }
+    methods:  [GET]
+    requirements:
+        id:   \d+
+
+material_new:
+    path:     /materiales/new
+    defaults: { _controller: AppBundle:Material:new }
+
+material_edit:
+    path:     /materiales/edit/{id}
+    defaults: { _controller: AppBundle:Material:edit }
+    requirements:
+        id:   \d+
+
+material_delete:
+    path:     /materiales/delete/{id}
+    defaults: { _controller: AppBundle:Material:delete, id: null }
+    requirements:
+        id:   \d+
+
+
+
+detalle_list:
+    path:     /detalles
+    defaults: { _controller: AppBundle:Detalle:index }
+
+detalle_show:
+    path:     /detalles/show/{id}
+    defaults: { _controller: AppBundle:Detalle:show, id: 1 }
+    methods:  [GET]
+    requirements:
+        id:   \d+
+
+detalle_new:
+    path:     /detalles/new
+    defaults: { _controller: AppBundle:Detalle:new }
+
+detalle_edit:
+    path:     /detalles/edit/{id}
+    defaults: { _controller: AppBundle:Detalle:edit }
+    requirements:
+        id:   \d+
+
+detalle_delete:
+    path:     /detalles/delete/{id}
+    defaults: { _controller: AppBundle:Detalle:delete, id: null }
+    requirements:
+        id:   \d+

@@ -1,0 +1,19 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+
+<div class="container">
+
+    <h1>Detalle {{ detalle.proyecto }}</h1>
+
+    <hr>
+
+    {{form(formulario)}}
+
+</div> <!-- /container -->
+
+{% endblock %}

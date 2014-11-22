@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OrdenPresupuestada" table="orden_presupuestada">
+    <indexes>
+      <index name="FK_MATERIAL_ORDEN_PRESUPUESTADA" columns="MATERIAL"/>
+      <index name="FK_PRESUPUESTO_MENSUAL_ORDEN_PRESUPUESTADA" columns="PRESUPUESTO_MENSUAL"/>
+    </indexes>
+    <id name="idOrdenPresupuestada" type="decimal" column="ID_ORDEN_PRESUPUESTADA">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="precioPresupuesto" type="decimal" column="PRECIO_PRESUPUESTO" precision="10" scale="2" nullable="false"/>
+    <field name="cantidadPresupuesto" type="float" column="CANTIDAD_PRESUPUESTO" precision="10" scale="0" nullable="false"/>
+    <field name="usuarioCreacion" type="string" column="USUARIO_CREACION" length="50" nullable="false"/>
+    <field name="fechaCreacion" type="datetime" column="FECHA_CREACION" nullable="false"/>
+    <field name="usuarioModificacion" type="string" column="USUARIO_MODIFICACION" length="50" nullable="true"/>
+    <field name="fechaModificacion" type="datetime" column="FECHA_MODIFICACION" nullable="true"/>
+    <many-to-one field="material" target-entity="Material">
+      <join-columns>
+        <join-column name="MATERIAL" referenced-column-name="ID_MATERIAL"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="presupuestoMensual" target-entity="PresupuestoMensual">
+      <join-columns>
+        <join-column name="PRESUPUESTO_MENSUAL" referenced-column-name="ID_PRESUPUESTO_MENSUAL"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

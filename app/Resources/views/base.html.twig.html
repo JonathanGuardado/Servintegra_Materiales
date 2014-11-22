@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9; text/html" />
+        <meta charset="utf-8">
+        <link rel="icon" type="image/x-icon"  href="images/favicon.ico"/>
+        <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/estilo.css') }}" />
+             <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/jquery-ui.css') }}" />
+        <title>Servintegra | {% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body id="{% block id '' %}">
+        <div class="divcontainer">
+            {% block body %}{% endblock %}
+            <footer class="footer">
+                <section class="L w100 img_footer">
+                    <div class="w100 L">
+                        <img src="{{ asset('bundles/app/images/logo_servin_pequeno1.png') }}" class="L logo_p1 T1 L5 B1"/>
+                    </div>
+                    <article>
+                        <div class="L25 L w50">
+                            <div class="w100 L gris_claro">
+                                <div class="space-line">&nbsp;</div>
+                            </div>
+                            <div class="text-claro text-center">
+                                Copyright 2014 &copy; | GRUPO SERVINTEGRA S.A. de C.V.
+                                Todos los Derechos Reservados
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </footer>
+        </div>
+
+        <script src="{{ asset('bundles/app/js/scripts/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/jquery-ui.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/bootstrap.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/html5shiv.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/respond.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/funciones.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/holder.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/jquery.bpopup.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/popups.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/jquery.validate.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/jquery.mask.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/validaciones.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/alertas.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/paginacion.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/scripts/modernizr.js') }}"></script>
+
+        {% block javasingles %}{% endblock %}
+    </body>
+</html>
