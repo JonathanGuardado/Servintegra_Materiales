@@ -8,21 +8,20 @@
 
 <div class="container">
 
-    <h1>Material {{ material.nombre }}</h1>
+    <h1>Material {{ material.nombreMaterial }}</h1>
 
     <dl class="dl-horizontal">
         <dt>Nombre</dt>
-        <dd>{{ material.nombre }}</dd>
+        <dd>{{ material.nombreMaterial }}</dd>
 
         <dt>Descripcion</dt>
-        <dd>{{ material.descripcion }}</dd>
+        <dd>{{ material.descripcionMaterial }}</dd>
 
         <hr>
 
         <dt>&nbsp;</dt>
         <dd>
-            <a href="{{ path('material_edit', {'id': material.id}) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ path('material_delete', {'id': material.id}) }}" class="btn btn-danger">Eliminar</a>
+            <a href="{{ path('material_edit', {'id': material.id}) }}" class="btn btn-warning">Editar</a>           
         </dd>
 
     </dl>

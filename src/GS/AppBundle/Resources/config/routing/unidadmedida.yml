@@ -1,0 +1,30 @@
+unidadmedida:
+    path:     /
+    defaults: { _controller: "AppBundle:UnidadMedida:index" }
+
+unidadmedida_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:UnidadMedida:show" }
+
+unidadmedida_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:UnidadMedida:new" }
+
+unidadmedida_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:UnidadMedida:create" }
+    requirements: { _method: post }
+
+unidadmedida_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:UnidadMedida:edit" }
+
+unidadmedida_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:UnidadMedida:update" }
+    requirements: { _method: post|put }
+
+unidadmedida_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:UnidadMedida:delete" }
+    requirements: { _method: post|delete }

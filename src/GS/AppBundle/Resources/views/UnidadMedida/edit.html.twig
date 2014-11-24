@@ -1,0 +1,20 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+    {% block main %}
+    <h1>Edici&oacute;n Unidad de medida</h1>
+
+    {{ form(edit_form, {'attr': {'class': ' formulario'}}) }}
+
+        <ul class="record_actions">
+    <li>
+        <a style="color:black" href="{{ path('unidadmedida') }}">
+            Regresar al listado
+        </a>
+    </li>
+   
+</ul>
+{% endblock %}

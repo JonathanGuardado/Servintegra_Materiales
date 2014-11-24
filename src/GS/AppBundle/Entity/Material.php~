@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Material
  *
  * @ORM\Table(name="material", indexes={@ORM\Index(name="FK_CATEGORIA_MATERIAL", columns={"CATEGORIA"}), @ORM\Index(name="FK_UNIDAD_MEDIDA_MATERIAL", columns={"UNIDAD_MEDIDA"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="GS\AppBundle\Repository\MaterialRepository")
  */
 class Material
 {
@@ -19,7 +19,7 @@ class Material
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idMaterial;
+    private $id;
 
     /**
      * @var string
@@ -68,7 +68,7 @@ class Material
      *
      * @ORM\Column(name="DESCRIPCION_UNIDAD", type="text", nullable=false)
      */
-    private $descripcionUnidad;
+    private $descripcionMaterial;
 
     /**
      * @var string
@@ -117,7 +117,13 @@ class Material
      * })
      */
     private $categoria;
-
+    
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="estado", type="boolean", nullable=true)
+     */
+    private $estado;
 
 
     /**
@@ -125,11 +131,21 @@ class Material
      *
      * @return string 
      */
-    public function getIdMaterial()
+    public function getId()
     {
-        return $this->idMaterial;
+        return $this->id;
     }
-
+   
+    /**
+     * set idMaterial
+     *
+     * @return string 
+     */
+    public function setId()
+    {
+        return $this->id;
+    }
+    
     /**
      * Set nombreMaterial
      *
@@ -271,12 +287,12 @@ class Material
     /**
      * Set descripcionUnidad
      *
-     * @param string $descripcionUnidad
+     * @param string $descripcionMaterial
      * @return Material
      */
-    public function setDescripcionUnidad($descripcionUnidad)
+    public function setDescripcionMaterial($descripcionMaterial)
     {
-        $this->descripcionUnidad = $descripcionUnidad;
+        $this->descripcionMaterial = $descripcionMaterial;
 
         return $this;
     }
@@ -286,9 +302,9 @@ class Material
      *
      * @return string 
      */
-    public function getDescripcionUnidad()
+    public function getDescripcionMaterial()
     {
-        return $this->descripcionUnidad;
+        return $this->descripcionMaterial;
     }
 
     /**
@@ -427,5 +443,32 @@ class Material
     public function getCategoria()
     {
         return $this->categoria;
+    }
+    
+    /**
+     * Set estado
+     *
+     * @param boolean $estado
+     * @return Materiales
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return boolean 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+      public function __toString()
+    {
+        return $this->getNombreMaterial();
     }
 }

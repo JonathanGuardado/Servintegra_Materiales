@@ -204,9 +204,10 @@ table.dataTable thead td:active {
     -webkit-overflow-scrolling: touch;
 }
 .ConfigureScrollXTable div.dataTables_wrapper {
-/*    min-width: 1305px !important;*/
-    max-width: 1305px  !important;
-    float: left;
+/*   min-width: 1305px !important;*/
+   // max-width: 1305px  !important;
+    //float: left;
+
 }
 
 table.tableBlock { display: block; }

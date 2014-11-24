@@ -2,39 +2,50 @@
 
 {% block body %}
 
-<section class="w100 L content_head">
-    <article class="w100 L gris_claro" style="background: black !important;">
-        <div class="w100 L naranja">
-            <div class="space-min">&nbsp;</div>
-        </div>
-        <div class="w50 L">
-            <div class="w100 L logo_p T1 L5 B1"></div>
-        </div>
-        <div class="w100 L azul_claro">
-            <div class="space-min">&nbsp;</div>
-        </div>
+    <section class="w100 L content_head">
+        <article class="w100 L gris_claro" style="background: black !important;">
+            <div class="w100 L naranja">
+                <div class="space-min">&nbsp;</div>
+            </div>
+            <div class="w50 L">
+                <div class="w100 L logo_p T1 L5 B1"></div>
+            </div>
+            <div class="w100 L azul_claro">
+                <div class="space-min">&nbsp;</div>
+            </div>
+        </article>
+    </section>
+
+    <article class="L w100">
+        <!-- menu --> 
+        <nav class="cbp-hsmenu-wrapper  navbar navbar-default" id="cbp-hsmenu-wrapper">
+            <!-- nav-collapse -->
+            <div class="cbp-hsinner navbar-collapse collapse">
+                <ul class="cbp-hsmenu nav navbar-nav navbar-right">
+                    <li> <a href="{{ path('app_homepage') }}">Inicio</a> </li>
+                    <li> <a href="{{path('proximamente')}}">Maestro de Proyectos</a> </li>                    
+                    <li><a href="materiales/new">Maestro de Materiales</a>
+                        <ul class="cbp-hssubmenu">
+                            <li><a href="{{path('material_list')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img07"/><span>Ver Inventario</span></a></li>
+                            <li><a href="{{path('material_new')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Nuevo</span></a></li>
+                        </ul></li>
+                    <li><a href="{{path('proximamente')}}">Movimientos</a></li>
+                    <li> <a href="{{path('proximamente')}}">Autorizaci&oacute;n de Sobregiros</a></li>
+                    <li> <a href="{{path('proximamente')}}">Catalogos</a>
+                        <ul class="cbp-hssubmenu">
+                            <li><a href="{{path('categoria_list')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img07"/><span>Categorias</span></a></li>
+                            <li><a href="{{path('unidadmedida')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Unidades de medida</span></a></li>
+                            <li><a href="{{path('unidadmedida')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Unidades de negocios</span></a></li>
+                        </ul></li>
+                    </li>
+                    <li> <a href="{{path('proximamente')}}">Salir</a></li>
+                </ul>
+            </div>
+            <!-- nav-collapse --> 
+        </nav>
     </article>
-</section>
 
-<article class="L w100">
-    <!-- menu --> 
-    <nav class="R R1 navbar navbar-default">
-        <!-- nav-collapse -->
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li> <a href="{{ path('app_homepage') }}">Inicio</a> </li>
-                <li> <a href="proyectos.php">Maestro de Proyectos</a> </li>
-<!--                <li> <a href="./calculo/">Calcular</a> </li>-->
-                <li><a href="materiales.php">Maestro de Materiales</a></li>
-                <li><a href="movimientos.php">Movimientos</a></li>
-                <li> <a href="autorizacion.php">Autorizaci&oacute;n de Sobregiros</a></li>
-            </ul>
-        </div>
-        <!-- nav-collapse --> 
-    </nav>
-</article>
-
-<section class="contentsection" >
+    <section class="contentsection" >
     {% block main %}{% endblock %}
 </section>
 

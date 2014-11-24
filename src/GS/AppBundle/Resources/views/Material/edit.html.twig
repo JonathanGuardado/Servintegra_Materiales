@@ -8,12 +8,12 @@
 
 <div class="container">
 
-    <h1>Material {{ material.nombre }}</h1>
+    <h1>Material {{ material.nombreMaterial }}</h1>
 
     <hr>
-
-    {{form(formulario)}}
-
+<center>
+    {{form(formulario, {'attr': {'class': ' formulario'}}) }}
+</center>
 </div> <!-- /container -->
 
 {% endblock %}

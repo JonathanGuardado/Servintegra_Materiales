@@ -93,4 +93,8 @@ class UnidadNegocio
     {
         return $this->descripcionUnidadNegocio;
     }
+      public function __toString()
+    {
+        return $this->getNombreUnidadNegocio();
+    }
 }

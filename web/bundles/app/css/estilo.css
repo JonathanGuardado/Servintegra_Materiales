@@ -573,7 +573,7 @@ h4{
     width: 50%;
     
 }
-.formulario .btn{
+.formulario .btn-success,.btn-danger{
     margin-top: 20px;
     float:left;
     width: 24%;

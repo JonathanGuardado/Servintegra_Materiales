@@ -8,18 +8,18 @@ use Doctrine\ORM\Mapping as ORM;
  * Material
  *
  * @ORM\Table(name="material", indexes={@ORM\Index(name="FK_CATEGORIA_MATERIAL", columns={"CATEGORIA"}), @ORM\Index(name="FK_UNIDAD_MEDIDA_MATERIAL", columns={"UNIDAD_MEDIDA"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="GS\AppBundle\Repository\MaterialRepository")
  */
 class Material
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="ID_MATERIAL", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Column(name="ID_MATERIAL", type="string", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $idMaterial;
+    private $id;
 
     /**
      * @var string
@@ -131,11 +131,22 @@ class Material
      *
      * @return string 
      */
-    public function getIdMaterial()
+    public function getId()
     {
-        return $this->idMaterial;
+        return $this->id;
     }
-
+   
+    /**
+     * set idMaterial
+     *
+     * @return string 
+     */
+    public function setId($id)
+    {
+         $this->id=$id;
+         return $this;
+    }
+    
     /**
      * Set nombreMaterial
      *

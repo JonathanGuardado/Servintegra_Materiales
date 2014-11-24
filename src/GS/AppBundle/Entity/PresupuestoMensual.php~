@@ -285,4 +285,37 @@ class PresupuestoMensual
     {
         return $this->proyecto;
     }
+
+    /**
+     * Add excedentes
+     *
+     * @param \GS\AppBundle\Entity\Excedente $excedentes
+     * @return PresupuestoMensual
+     */
+    public function addExcedente(\GS\AppBundle\Entity\Excedente $excedentes)
+    {
+        $this->excedentes[] = $excedentes;
+
+        return $this;
+    }
+
+    /**
+     * Remove excedentes
+     *
+     * @param \GS\AppBundle\Entity\Excedente $excedentes
+     */
+    public function removeExcedente(\GS\AppBundle\Entity\Excedente $excedentes)
+    {
+        $this->excedentes->removeElement($excedentes);
+    }
+
+    /**
+     * Get excedentes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getExcedentes()
+    {
+        return $this->excedentes;
+    }
 }

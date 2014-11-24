@@ -388,4 +388,14 @@ class Proyecto {
     {
         return $this->presupuestos;
     }
+
+    /**
+     * Get ordenes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrdenes()
+    {
+        return $this->ordenes;
+    }
 }

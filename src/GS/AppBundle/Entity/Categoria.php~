@@ -92,4 +92,8 @@ class Categoria
     {
         return $this->descripcionUnidad;
     }
+     public function __toString()
+    {
+        return $this->getNombreCategoria();
+    }
 }

@@ -19,7 +19,7 @@ class MaterialType extends AbstractType {
                 ->add('ubicacion')                
                 ->add('unidadMedida')
                 ->add('estado')                
-                ->add('crear', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')))
+                ->add('Guardar', 'submit', array('label' => 'Guardar', 'attr' => array('class' => 'btn btn-success')))
                 ->add('cancelar', 'button', array('label' => 'Cancelar', 'attr' => array('class' => 'btn btn-danger')))
         ;
     }

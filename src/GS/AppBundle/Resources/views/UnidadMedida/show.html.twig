@@ -1,0 +1,40 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+    {% block main %}
+    <h1>UnidadMedida</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idunidad</th>
+                <td>{{ entity.idUnidad }}</td>
+            </tr>
+            <tr>
+                <th>Nombreunidad</th>
+                <td>{{ entity.nombreUnidad }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionunidad</th>
+                <td>{{ entity.descripcionUnidad }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('unidadmedida') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('unidadmedida_edit', { 'id': entity.idUnidad }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

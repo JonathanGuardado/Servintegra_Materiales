@@ -111,21 +111,6 @@ class Proyecto {
         $this->presupuestos = new ArrayCollection();
     }
 
-    public function addOrden(\GS\AppBundle\Entity\OrdenSalida $ordenSalida) {
-
-        $ordenSalida->setProyecto($this);
-
-        $this->ordenes->add($ordenSalida);
-    }
-
-    public function getOrdenes() {
-        return $this->ordenes;
-    }
-
-    public function removeOrdenes(\GS\AppBundle\Entity\OrdenSalida $ordenSalida) {
-        $this->ordenes->removeElement($ordenSalida);
-    }
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
@@ -347,4 +332,60 @@ class Proyecto {
         return $this->unidadNegocio;
     }
 
+
+    /**
+     * Add ordenes
+     *
+     * @param \GS\AppBundle\Entity\OrdenSalida $ordenes
+     * @return Proyecto
+     */
+    public function addOrdene(\GS\AppBundle\Entity\OrdenSalida $ordenes)
+    {
+        $this->ordenes[] = $ordenes;
+
+        return $this;
+    }
+
+    /**
+     * Remove ordenes
+     *
+     * @param \GS\AppBundle\Entity\OrdenSalida $ordenes
+     */
+    public function removeOrdene(\GS\AppBundle\Entity\OrdenSalida $ordenes)
+    {
+        $this->ordenes->removeElement($ordenes);
+    }
+
+    /**
+     * Add presupuestos
+     *
+     * @param \GS\AppBundle\Entity\PresupuestoMensual $presupuestos
+     * @return Proyecto
+     */
+    public function addPresupuesto(\GS\AppBundle\Entity\PresupuestoMensual $presupuestos)
+    {
+        $this->presupuestos[] = $presupuestos;
+
+        return $this;
+    }
+
+    /**
+     * Remove presupuestos
+     *
+     * @param \GS\AppBundle\Entity\PresupuestoMensual $presupuestos
+     */
+    public function removePresupuesto(\GS\AppBundle\Entity\PresupuestoMensual $presupuestos)
+    {
+        $this->presupuestos->removeElement($presupuestos);
+    }
+
+    /**
+     * Get presupuestos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPresupuestos()
+    {
+        return $this->presupuestos;
+    }
 }

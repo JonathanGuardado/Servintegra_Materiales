@@ -1,3 +1,7 @@
+app_unidadmedida:
+    resource: "@AppBundle/Resources/config/routing/unidadmedida.yml"
+    prefix:   /unidadmedida
+
 app_homepage:
     path:     /
     defaults: { _controller: AppBundle:Home:index }
@@ -115,3 +119,7 @@ detalle_delete:
     defaults: { _controller: AppBundle:Detalle:delete, id: null }
     requirements:
         id:   \d+
+
+proximamente:
+    path:     /proximamente
+    defaults: { _controller: AppBundle:Home:proximamente }

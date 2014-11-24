@@ -1,0 +1,72 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+    {% block main %}
+
+        <section>
+            <div class="naranja space">&nbsp;</div>
+            <div class="space-line">&nbsp;</div>
+            <div class="naranja space-line">&nbsp;</div>
+        </section>
+
+        <section>
+            <article class="w100 gris_claro-textura space">&nbsp;</article>
+            <article class="w100 gris_claro-textura space">&nbsp;</article>  
+            <article class="w100 gris_claro-texturaspace">
+                <dd class="R w100">
+                    <dl class="w7 R R1">
+                        <a href="{{path('unidadmedida_new')}}">
+                            <input class="btn btn-success w100" type="button" value="Nuevo"/>
+                        </a>
+                    </dl>
+                </dd>
+            </article>
+            <article class="w100 gris_claro-textura space">&nbsp;</article>  
+        </section>
+        <div>
+            {% for flashMessage in app.session.flashbag.get('info') %}
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <strong>Aviso, </strong> {{ flashMessage }}
+                </div>
+            {% endfor %}
+        </div>                  
+        <h1 class="L L3">Unidades de Medida</h1>
+
+        <section class="w100 white-box">
+            <fieldset class=" w100">
+                <div class="ConfigureScrollXTable" style="width:35%" >
+                    <!--sin scroll menos de 8 columnas-->                        
+                    <table cellspacing="4" id="" class="tablepaginate dataTable tablapaginacion w100  tableBlock">  
+                        <thead>
+                            <tr>                                
+                                <th>Nombreunidad</th>
+                                <th>Descripcionunidad</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    
+                                    <td>{{ entity.nombreUnidad }}</td>
+                                    <td>{{ entity.descripcionUnidad }}</td>
+                                    <td>
+                                       
+                                                <a href="{{ path('unidadmedida_show', { 'id': entity.idUnidad }) }}" class="btn btn-info">Ver Material</a>
+                                        
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </section>
+
+    {% endblock %}
