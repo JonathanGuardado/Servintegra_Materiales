@@ -1,0 +1,20 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+
+    <h1 class="L L3">Creaci&oacute;n Unidad de Negocio</h1>
+    
+    {{ form(form, {'attr': {'class': 'formulario form-horizontal T6'}}) }}
+
+        <ul class="record_actions not_style_list">
+     <li>
+        <a href="{{ path('unidadnegocio') }}" class="btn btn-primary">
+           Regresar al Listados
+        </a>
+    </li>
+</ul>
+{% endblock %}

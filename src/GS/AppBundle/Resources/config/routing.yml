@@ -2,6 +2,10 @@ app_unidadmedida:
     resource: "@AppBundle/Resources/config/routing/unidadmedida.yml"
     prefix:   /unidadmedida
 
+app_unidadnegocio:
+    resource: "@AppBundle/Resources/config/routing/unidadnegocio.yml"
+    prefix:   /unidadnegocio
+
 app_homepage:
     path:     /
     defaults: { _controller: AppBundle:Home:index }

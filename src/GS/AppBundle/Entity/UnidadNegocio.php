@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class UnidadNegocio
 {
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="ID_UNIDAD_NEGOCIO", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Column(name="ID_UNIDAD_NEGOCIO", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

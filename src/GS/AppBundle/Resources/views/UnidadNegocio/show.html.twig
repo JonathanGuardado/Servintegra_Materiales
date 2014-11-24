@@ -1,0 +1,36 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+    {% block main %}
+    <h1 class="L L3">Unidad de Negocio</h1>
+
+    <table class="record_properties T6">
+        <tbody>
+             <tr>
+                <th>Nombre unidad de negocio: </th>
+                <td>{{ entity.nombreUnidadNegocio }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion unidad de negocio: </th>
+                <td>{{ entity.descripcionUnidadNegocio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions not_style_list">
+    <li>
+        <a class="btn btn-primary T1" href="{{ path('unidadnegocio') }}">
+            Regresar al listado
+        </a>
+    </li>
+    <li>
+        <a class="btn btn-primary T1" href="{{ path('unidadnegocio_edit', { 'id': entity.idUnidadNegocio }) }}">
+            Editar
+        </a>
+    </li>
+    <!--<li>{{ form(delete_form) }}</li>-->
+</ul>
+{% endblock %}

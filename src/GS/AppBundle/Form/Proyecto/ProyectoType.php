@@ -11,23 +11,25 @@ class ProyectoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('personas')            
-            ->add('fechaInicio', 'date', array(
+            ->add('nombreProyecto')
+            ->add('nPersonas','text',array('label'=>"Numero de personas"))            
+            ->add('fInicio', 'date', array(
+                'label'=>'Fecha de Inicio',
                 'input'  => 'datetime', 'widget' => 'single_text', 
                 'format' => 'dd/MM/yyyy',
                 'attr' => array('class' => 'date form-control')))
             ->add('presupuesto')
+                ->add('responsable','text')
             ->add('unidadNegocio')
-            ->add('fase')
-            ->add('crear', 'submit')
+            
+            ->add('Guardar', 'submit')
         ;
     }
  
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'GS\AppBundle\Entity\Proyectos'
+            'data_class' => 'GS\AppBundle\Entity\Proyecto'
         ));
     }
  

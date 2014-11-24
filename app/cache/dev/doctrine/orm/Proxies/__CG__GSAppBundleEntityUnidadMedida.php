@@ -179,7 +179,7 @@ class UnidadMedida extends \GS\AppBundle\Entity\UnidadMedida implements \Doctrin
     public function getIdUnidad()
     {
         if ($this->__isInitialized__ === false) {
-            return  parent::getIdUnidad();
+            return (int)  parent::getIdUnidad();
         }
 
 

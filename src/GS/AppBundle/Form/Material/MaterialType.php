@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class MaterialType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
-        $builder
+        $builder                
                 ->add('categoria')
                 ->add('nombreMaterial','text')
                 ->add('descripcionMaterial')

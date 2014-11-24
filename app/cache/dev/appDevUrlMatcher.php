@@ -122,63 +122,126 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/unidadmedida')) {
-            // unidadmedida
-            if (rtrim($pathinfo, '/') === '/unidadmedida') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'unidadmedida');
+        if (0 === strpos($pathinfo, '/unidad')) {
+            if (0 === strpos($pathinfo, '/unidadmedida')) {
+                // unidadmedida
+                if (rtrim($pathinfo, '/') === '/unidadmedida') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'unidadmedida');
+                    }
+
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::indexAction',  '_route' => 'unidadmedida',);
                 }
 
-                return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::indexAction',  '_route' => 'unidadmedida',);
-            }
-
-            // unidadmedida_show
-            if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_show')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::showAction',));
-            }
-
-            // unidadmedida_new
-            if ($pathinfo === '/unidadmedida/new') {
-                return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::newAction',  '_route' => 'unidadmedida_new',);
-            }
-
-            // unidadmedida_create
-            if ($pathinfo === '/unidadmedida/create') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_unidadmedida_create;
+                // unidadmedida_show
+                if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_show')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::showAction',));
                 }
 
-                return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::createAction',  '_route' => 'unidadmedida_create',);
-            }
-            not_unidadmedida_create:
-
-            // unidadmedida_edit
-            if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_edit')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::editAction',));
-            }
-
-            // unidadmedida_update
-            if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
-                    $allow = array_merge($allow, array('POST', 'PUT'));
-                    goto not_unidadmedida_update;
+                // unidadmedida_new
+                if ($pathinfo === '/unidadmedida/new') {
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::newAction',  '_route' => 'unidadmedida_new',);
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_update')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::updateAction',));
-            }
-            not_unidadmedida_update:
+                // unidadmedida_create
+                if ($pathinfo === '/unidadmedida/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_unidadmedida_create;
+                    }
 
-            // unidadmedida_delete
-            if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
-                    $allow = array_merge($allow, array('POST', 'DELETE'));
-                    goto not_unidadmedida_delete;
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::createAction',  '_route' => 'unidadmedida_create',);
+                }
+                not_unidadmedida_create:
+
+                // unidadmedida_edit
+                if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_edit')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::editAction',));
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_delete')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::deleteAction',));
+                // unidadmedida_update
+                if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_unidadmedida_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_update')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::updateAction',));
+                }
+                not_unidadmedida_update:
+
+                // unidadmedida_delete
+                if (preg_match('#^/unidadmedida/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_unidadmedida_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadmedida_delete')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadMedidaController::deleteAction',));
+                }
+                not_unidadmedida_delete:
+
             }
-            not_unidadmedida_delete:
+
+            if (0 === strpos($pathinfo, '/unidadnegocio')) {
+                // unidadnegocio
+                if (rtrim($pathinfo, '/') === '/unidadnegocio') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'unidadnegocio');
+                    }
+
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::indexAction',  '_route' => 'unidadnegocio',);
+                }
+
+                // unidadnegocio_show
+                if (preg_match('#^/unidadnegocio/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadnegocio_show')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::showAction',));
+                }
+
+                // unidadnegocio_new
+                if ($pathinfo === '/unidadnegocio/new') {
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::newAction',  '_route' => 'unidadnegocio_new',);
+                }
+
+                // unidadnegocio_create
+                if ($pathinfo === '/unidadnegocio/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_unidadnegocio_create;
+                    }
+
+                    return array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::createAction',  '_route' => 'unidadnegocio_create',);
+                }
+                not_unidadnegocio_create:
+
+                // unidadnegocio_edit
+                if (preg_match('#^/unidadnegocio/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadnegocio_edit')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::editAction',));
+                }
+
+                // unidadnegocio_update
+                if (preg_match('#^/unidadnegocio/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_unidadnegocio_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadnegocio_update')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::updateAction',));
+                }
+                not_unidadnegocio_update:
+
+                // unidadnegocio_delete
+                if (preg_match('#^/unidadnegocio/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_unidadnegocio_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'unidadnegocio_delete')), array (  '_controller' => 'GS\\AppBundle\\Controller\\UnidadNegocioController::deleteAction',));
+                }
+                not_unidadnegocio_delete:
+
+            }
 
         }
 

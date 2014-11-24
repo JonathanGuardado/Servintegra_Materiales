@@ -5,36 +5,36 @@
 {% block id 'portada' %}
 
     {% block main %}
-    <h1>UnidadMedida</h1>
+    <h1 class="L L3">Unidad de Medida</h1>
 
-    <table class="record_properties">
+    <table class="record_properties T6">
         <tbody>
+           
             <tr>
-                <th>Idunidad</th>
-                <td>{{ entity.idUnidad }}</td>
+                <th>Nombreunidad: </th>
+                <td> {{ entity.nombreUnidad }}</td>
             </tr>
             <tr>
-                <th>Nombreunidad</th>
-                <td>{{ entity.nombreUnidad }}</td>
-            </tr>
-            <tr>
-                <th>Descripcionunidad</th>
-                <td>{{ entity.descripcionUnidad }}</td>
+                <th>Descripcionunidad: </th>
+                <td> {{ entity.descripcionUnidad }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
+        <ul class="record_actions TB w10  not_style_list">
     <li>
-        <a href="{{ path('unidadmedida') }}">
-            Back to the list
+        <a href="{{ path('unidadmedida') }}" class="btn btn-primary T3">
+           Regresar al Listado
         </a>
     </li>
     <li>
-        <a href="{{ path('unidadmedida_edit', { 'id': entity.idUnidad }) }}">
-            Edit
+        <a href="{{ path('unidadmedida_edit', { 'id': entity.idUnidad }) }}" class="btn btn-primary T3">
+            Editar
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+  <!--  <li><a href="{{ path('unidadmedida_delete', { 'id': entity.idUnidad }) }}" >
+           {{ form(delete_form) }}
+        </a>
+    </li>-->
 </ul>
 {% endblock %}

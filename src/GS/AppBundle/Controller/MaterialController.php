@@ -38,11 +38,12 @@ class MaterialController extends Controller {
 
         $formulario = $this->createForm(new MaterialType(), $material);
         $formulario->handleRequest($request);
-
-        if ($formulario->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getEntityManager();
             $numeroMateriales = count($em->getRepository("AppBundle:Material")->findAll());
             $id = $this->getNextMaterialId($numeroMateriales);
+
+        if ($formulario->isValid()) {
+            
             $material->setId($id);
             $material->setFechaCreacion(new \DateTime());
             $material->setCantidadReorden(10);
@@ -58,9 +59,9 @@ class MaterialController extends Controller {
 
             return $this->redirect($this->generateUrl('material_list'));
         }
-
         return $this->render('AppBundle:Material:create.html.twig', array(
                     'accion' => 'crear',
+                    'id'=>$id,
                     'formulario' => $formulario->createView()
         ));
     }
@@ -88,7 +89,7 @@ class MaterialController extends Controller {
                             $this->generateUrl('material_list')
             );
         }
-
+        
         return $this->render('AppBundle:Material:edit.html.twig', array(
                     'formulario' => $formulario->createView(),
                     'material' => $material

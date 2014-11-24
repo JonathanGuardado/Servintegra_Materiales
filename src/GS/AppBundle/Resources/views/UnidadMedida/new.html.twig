@@ -1,14 +1,19 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
-{% block body -%}
-    <h1>UnidadMedida creation</h1>
+{% block title %} Principal Servintegra {% endblock %}
 
-    {{ form(form, {'attr': {'class': ' formulario'}}) }}
+{% block id 'portada' %}
 
-        <ul class="record_actions">
+{% block main %}
+
+    <h1 class="L L3">Creaci&oacute;n Unidad de Medida</h1>
+    
+    {{ form(form, {'attr': {'class': 'formulario form-horizontal T6'}}) }}
+
+        <ul class="record_actions not_style_list">
     <li>
-        <a href="{{ path('unidadmedida') }}">
-            Back to the list
+        <a class="btn btn-primary" href="{{path('unidadmedida') }}">
+            Regresar al listado
         </a>
     </li>
 </ul>

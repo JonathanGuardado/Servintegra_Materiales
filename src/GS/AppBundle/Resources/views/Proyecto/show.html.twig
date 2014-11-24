@@ -6,26 +6,27 @@
 
 {% block main %}
 
-<div class="container">
+<div class="container w40">
 
-    <h1>Categoria {{ proyecto.nombre }}</h1>
+    <h1>Categoria {{ proyecto.nombreProyecto }}</h1>
 
     <dl class="dl-horizontal">
         <dt>Nombre</dt>
-        <dd>{{ proyecto.nombre }}</dd>
+        <dd>{{ proyecto.nombreProyecto }}</dd>
 
-        <dt>Descripcion</dt>
-        <dd>{{ proyecto.personas }}</dd>
+        <dt>Numero de personas</dt>
+        <dd>{{ proyecto.nPersonas }}</dd>
 
         <hr>
 
         <dt>&nbsp;</dt>
         <dd>
-            <a href="{{ path('proyecto_edit', {'id': proyecto.id}) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ path('proyecto_delete', {'id': proyecto.id}) }}" class="btn btn-danger">Eliminar</a>
+            
+           <!-- <a href="{{ path('proyecto_delete', {'id': proyecto.idProyecto}) }}" class="btn btn-danger">Eliminar</a>-->
         </dd>
 
     </dl>
+    <a href="{{ path('proyecto_edit', {'id': proyecto.idProyecto}) }}" class="btn btn-primary R30 B5">Editar</a>
 
 </div> <!-- /container -->
 

@@ -1,0 +1,30 @@
+unidadnegocio:
+    path:     /
+    defaults: { _controller: "AppBundle:UnidadNegocio:index" }
+
+unidadnegocio_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:UnidadNegocio:show" }
+
+unidadnegocio_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:UnidadNegocio:new" }
+
+unidadnegocio_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:UnidadNegocio:create" }
+    requirements: { _method: post }
+
+unidadnegocio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:UnidadNegocio:edit" }
+
+unidadnegocio_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:UnidadNegocio:update" }
+    requirements: { _method: post|put }
+
+unidadnegocio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:UnidadNegocio:delete" }
+    requirements: { _method: post|delete }

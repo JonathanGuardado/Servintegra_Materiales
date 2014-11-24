@@ -25,46 +25,8 @@
     <div class="L w100">
         <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 
     </div>
-    {{ form_start(formulario, {'attr': {'class': 'form-horizontal'}}) }}
-    <article class="L w100 ">
-        <dd class="L w50 L25">
-            <fieldset class="w100 T2 B2 L">
-                <dl class="w100 L">
-                    <h4 class="text-center">Nueva Categoria</h4>
-                    <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa">
-                </dl>
-                <dl class="w100 L T1">
-                    <div class="L text-naranja T2">
-                        {{ form_label(formulario.nombre, 'Nombre Categoria', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-                    </div>
-                    <div class="L w50 L2">
-                        {{ form_widget(formulario.nombre, {'attr': {'class': 'form-control'}}) }}
-                    </div>
-                </dl>
-                <dl class="w100 L T1">
-                    <div class="L text-naranja T2">
-                        {{ form_label(formulario.descripcion, 'Descripcion Categoria', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-                    </div>
-                    <div class="L w50 L2">
-                        {{ form_widget(formulario.descripcion, {'attr': {'class': 'form-control'}}) }}
-                    </div>
-                </dl>
-            </fieldset> 
-        </dd> 
-    </article>
-    <article class="w100 L">
-        <dd class="w50 L25 L B3">
-            <dl class="w15 R R3">
-                <a href="{{ path('categoria_list')}}">
-                    <input class="btn btn-danger w100" type="button" value="Cancelar"/>
-                </a>                
-            </dl>
-            <dl class="w15 R R1">
-                {{ form_widget(formulario.crear, {'label': 'Guardar', 'attr': {'class': 'btn btn-success'}}) }}
-            </dl>
-        </dd>
-    </article>
-    {{ form_end(formulario) }}
+    {{ form(formulario, {'attr': {'class': 'formulario form-horizontal'}}) }}
+
     <div class="L w100">
         <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 
     </div>

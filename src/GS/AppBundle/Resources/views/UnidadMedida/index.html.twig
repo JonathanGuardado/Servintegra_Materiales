@@ -4,7 +4,8 @@
 
 {% block id 'portada' %}
 
-    {% block main %}
+{% block main %}
+
 
         <section>
             <div class="naranja space">&nbsp;</div>
@@ -26,6 +27,7 @@
             </article>
             <article class="w100 gris_claro-textura space">&nbsp;</article>  
         </section>
+
         <div>
             {% for flashMessage in app.session.flashbag.get('info') %}
                 <div class="alert alert-info alert-dismissible" role="alert">
@@ -37,10 +39,10 @@
             {% endfor %}
         </div>                  
         <h1 class="L L3">Unidades de Medida</h1>
-
+ <div class="container w100">
         <section class="w100 white-box">
             <fieldset class=" w100">
-                <div class="ConfigureScrollXTable" style="width:35%" >
+                <div class="ConfigureScrollXTable" style="width:40%" >
                     <!--sin scroll menos de 8 columnas-->                        
                     <table cellspacing="4" id="" class="tablepaginate dataTable tablapaginacion w100  tableBlock">  
                         <thead>
@@ -68,5 +70,11 @@
                 </div>
             </fieldset>
         </section>
-
+     </div>
+        <section>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+</section>
     {% endblock %}

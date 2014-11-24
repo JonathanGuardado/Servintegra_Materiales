@@ -15,7 +15,7 @@ class Categoria
     /**
      * @var string
      *
-     * @ORM\Column(name="ID_CATEGORIA", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Column(name="ID_CATEGORIA", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -31,9 +31,9 @@ class Categoria
     /**
      * @var string
      *
-     * @ORM\Column(name="DESCRIPCION_UNIDAD", type="text", nullable=false)
+     * @ORM\Column(name="DESCRIPCION_CATEGORIA", type="text", nullable=false)
      */
-    private $descripcionUnidad;
+    private $descripcionCategoria;
 
 
 
@@ -76,9 +76,9 @@ class Categoria
      * @param string $descripcionUnidad
      * @return Categoria
      */
-    public function setDescripcionUnidad($descripcionUnidad)
+    public function setDescripcionCategoria($descripcionCategoria)
     {
-        $this->descripcionUnidad = $descripcionUnidad;
+        $this->descripcionCategoria = $descripcionCategoria;
 
         return $this;
     }
@@ -88,9 +88,9 @@ class Categoria
      *
      * @return string 
      */
-    public function getDescripcionUnidad()
+    public function getDescripcionCategoria()
     {
-        return $this->descripcionUnidad;
+        return $this->descripcionCategoria;
     }
      public function __toString()
     {

@@ -5,7 +5,7 @@ namespace GS\AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use GS\AppBundle\Entity\Categorias;
+use GS\AppBundle\Entity\Categoria;
 use GS\AppBundle\Form\Categoria\CategoriaType;
 
 
@@ -27,7 +27,7 @@ class CategoriaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categoria = $em->getRepository('AppBundle:Categorias')->find($id);
+        $categoria = $em->getRepository('AppBundle:Categoria')->find($id);
 
         if (!$categoria) {
             throw $this->createNotFoundException('No se ha encontrado la categoria solicitada');
@@ -40,18 +40,13 @@ class CategoriaController extends Controller
 
     public function newAction(Request $request)
     {
-        $categoria = new Categorias();
+        $categoria = new Categoria();
 
         $formulario = $this->createForm(new CategoriaType(), $categoria);
         $formulario->handleRequest($request);
 
-        if ($formulario->isValid()) {
-            $categoria->setCreatedAt(new \DateTime());
-            $categoria->setUpdateAt(new \DateTime());
-            $categoria->setUsuario("ADMIN");
-
+        if ($formulario->isValid()) {          
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($categoria);
             $em->flush();
 
@@ -72,7 +67,7 @@ class CategoriaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categoria = $em->getRepository('AppBundle:Categorias')->find($id);
+        $categoria = $em->getRepository('AppBundle:Categoria')->find($id);
 
         if (!$categoria) {
         throw $this->createNotFoundException('No se ha encontrado la categoria solicitada');
@@ -107,14 +102,13 @@ class CategoriaController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $categoria = $em->getRepository('AppBundle:Categorias')->find($id);
+        $categoria = $em->getRepository('AppBundle:Categoria')->find($id);
 
         if (!$categoria) {
             throw $this->createNotFoundException('No se ha encontrado la categoria solicitada');
         }
-
-        //$em->remove($categoria);
-        //$em->flush();
+        $em->remove($categoria);
+        $em->flush();
 
         $this->get('session')->getFlashBag()->add('info',
             'Se ha eliminado la categoria.'

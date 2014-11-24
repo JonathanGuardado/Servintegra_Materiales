@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class DetalleOrdenSalida
 {
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="ID_DETALLE_ORDEN", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Column(name="ID_DETALLE_ORDEN", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

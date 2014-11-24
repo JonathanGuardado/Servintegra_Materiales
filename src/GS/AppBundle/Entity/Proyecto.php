@@ -2,6 +2,7 @@
 
 namespace GS\AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,9 +16,9 @@ class Proyecto {
     /**
      * @var string
      *
-     * @ORM\Column(name="ID_PROYECTO", type="decimal", precision=8, scale=0, nullable=false)
+     * @ORM\Column(name="ID_PROYECTO", type="string", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $idProyecto;
 
@@ -27,6 +28,13 @@ class Proyecto {
      * @ORM\Column(name="N_PERSONAS", type="decimal", precision=8, scale=0, nullable=false)
      */
     private $nPersonas;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="NOMBRE_PROYECTO", nullable=false)
+     */
+    private $nombreProyecto;
 
     /**
      * @var \DateTime
@@ -121,7 +129,23 @@ class Proyecto {
     public function getIdProyecto() {
         return $this->idProyecto;
     }
-
+    
+    public function setIdProyecto($idProyecto) {
+         $this->idProyecto=$idProyecto;
+         return $this;
+    }
+    
+    
+    
+     public function getNombreProyecto() {
+        return $this->nombreProyecto;
+    }
+    
+    public function setNombreProyecto($nombreProyecto) {
+         $this->nombreProyecto=$nombreProyecto;
+         return $this;
+    }
+    
     /**
      * Set nPersonas
      *

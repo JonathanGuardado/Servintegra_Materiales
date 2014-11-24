@@ -8,11 +8,11 @@
 
 <div class="container">
 
-    <h1>Proyecto {{ proyecto.nombre }}</h1>
+    <h1>Proyecto {{ proyecto.nombreProyecto }}</h1>
 
     <hr>
 
-    {{form(formulario)}}
+    {{form(formulario, {'attr': {'class': 'formulario form-horizontal'}})}}
 
 </div> <!-- /container -->
 

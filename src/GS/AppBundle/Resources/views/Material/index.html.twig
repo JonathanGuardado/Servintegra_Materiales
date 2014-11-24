@@ -27,7 +27,7 @@
             <article class="w100 gris_claro-textura space">&nbsp;</article>  
         </section>
 
-        <div class="">
+        <div class="container w100">
 
             {% for flashMessage in app.session.flashbag.get('info') %}
                 <div class="alert alert-info alert-dismissible" role="alert">
@@ -40,9 +40,9 @@
 
             <h1 class="L L3"> Listado de Materiales</h1>
 
-            <section class="w100 white-box">
+            <section class="w100  space-L1 white-box">
                 <fieldset class=" w100">
-                    <div class="ConfigureScrollXTable w85" >
+                    <div  class="ConfigureScrollXTable w95" >
                         <!--sin scroll menos de 8 columnas-->                        
                         <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100  tableBlock">       
                             <!--con scroll mas de 8 columnas-->
@@ -54,7 +54,7 @@
                             <th><h6><center>Costo</center></h6></th>
                             <th><h6><center>Precio Venta</center></h6></th>
                             <th><h6><center>Existencia Actual</center></h6></th>
-                            <th><h6><center>Estado</center></h6></th>
+                          <!--  <th><h6><center>Estado</center></h6></th>-->
                             <th><h6><center>Fecha Ingreso</center></h6></th>
                             <th><h6><center>Opcion</center></h6></th>
                             </thead>
@@ -67,7 +67,7 @@
                                         <td><h6 class='centrar2'>{{ material.costoMaterial }}</h6></td>
                                         <td><h6 class='centrar2'>{{ material.precioMaterial }}</h6></td>
                                         <td><h6 class='centrar2'>{{ material.existenciaActual }}</h6></td>
-                                        <td><h6 class='centrar2'>{{ material.estado }}</h6></td>
+                                       <!-- <td><h6 class='centrar2'>{{ material.estado }}</h6></td>-->
                                         <td><h6 class='centrar2'>{{ material.fechaCreacion|date("d/m/Y H:i") }}</h6></td>
                                         <td><h6 class='centrar2'>
                                                 <a href="{{ path('material_show', {'id': material.id}) }}" class="btn btn-info">Ver Material</a>

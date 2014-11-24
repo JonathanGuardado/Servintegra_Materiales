@@ -23,11 +23,16 @@
             <div class="cbp-hsinner navbar-collapse collapse">
                 <ul class="cbp-hsmenu nav navbar-nav navbar-right">
                     <li> <a href="{{ path('app_homepage') }}">Inicio</a> </li>
-                    <li> <a href="{{path('proximamente')}}">Maestro de Proyectos</a> </li>                    
+                    <li> <a href="{{path('proximamente')}}">Maestro de Proyectos</a> 
+                     <ul class="cbp-hssubmenu">
+                            <li><a href="{{path('proyecto_list')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img07"/><span>Ver Proyectos</span></a></li>
+                            <li><a href="{{path('proyecto_new')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Ingresar un Nuevo Proyecto</span></a></li>
+                        </ul>
+                    </li>                    
                     <li><a href="materiales/new">Maestro de Materiales</a>
                         <ul class="cbp-hssubmenu">
                             <li><a href="{{path('material_list')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img07"/><span>Ver Inventario</span></a></li>
-                            <li><a href="{{path('material_new')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Nuevo</span></a></li>
+                            <li><a href="{{path('material_new')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Ingresar un Nuevo Material</span></a></li>
                         </ul></li>
                     <li><a href="{{path('proximamente')}}">Movimientos</a></li>
                     <li> <a href="{{path('proximamente')}}">Autorizaci&oacute;n de Sobregiros</a></li>
@@ -35,7 +40,7 @@
                         <ul class="cbp-hssubmenu">
                             <li><a href="{{path('categoria_list')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img07"/><span>Categorias</span></a></li>
                             <li><a href="{{path('unidadmedida')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Unidades de medida</span></a></li>
-                            <li><a href="{{path('unidadmedida')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Unidades de negocios</span></a></li>
+                            <li><a href="{{path('unidadnegocio')}}"><img src="{{ asset('bundles/app/images/logo_color.png') }}" alt="img08"/><span>Unidades de negocios</span></a></li>
                         </ul></li>
                     </li>
                     <li> <a href="{{path('proximamente')}}">Salir</a></li>

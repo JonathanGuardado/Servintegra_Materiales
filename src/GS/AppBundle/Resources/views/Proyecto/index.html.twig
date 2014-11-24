@@ -16,19 +16,9 @@
     <article class="w100 gris_claro-textura space">&nbsp;</article>
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
     <article class="w100 gris_claro-texturaspace">
-        <dd class="R w100">
-        <dl class="w7 R R3">
-        <input class="btn btn-warning w100" type="button" value="Eliminar"/>    
-        </dl>
-        <dl class="w7 R R1">
-        <input class="btn btn-warning w100" type="button" value="Consulta"/>    
-        </dl>
-        <dl class="w7 R R1">
-        <input class="btn btn-warning w100" type="button" value="Editar"/>
-        </dl>
-        <dl class="w7 R R1">
+        <dd class="R w100">        
             <a href="{{path('proyecto_new')}}">
-                <input class="btn btn-success w100" type="button" value="Nuevo"/>
+                <input class="btn btn-success R R2" type="button" value="Nuevo"/>
             </a>
         </dl>
         </dd>
@@ -36,7 +26,7 @@
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
 </section>
 
-<div class="container">
+<div class="container w100">
 
 {% for flashMessage in app.session.flashbag.get('info') %}
 <div class="alert alert-info alert-dismissible" role="alert">
@@ -47,17 +37,17 @@
 </div>
 {% endfor %}
 
-<h1>Listado de Proyectos</h1>
+<h1 class="L L3">Listado de Proyectos</h1>
 
 <section class="w100 space-L1 L white-box">
     <fieldset class="L w100">
-        <div class="ConfigureScrollXTable  " >
+        <div class="ConfigureScrollXTable w60 " >
             <!--sin scroll menos de 8 columnas-->
             <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100 L tableBlock">       
                 <!--con scroll mas de 8 columnas-->
                     <!--<table cellspacing="0" id="" class="tablepaginateScroll tablapaginacion w100 L tableBlock">-->
                 <thead>
-                <th><h6><center>Id</center></h6></th>
+                <th><h6><center>C&oacute;digo</center></h6></th>
                 <th><h6><center>Nombre</center></h6></th>
                 <th><h6><center>Total Personas</center></h6></th>
                 <th><h6><center>Fecha Ingreso</center></h6></th>
@@ -66,12 +56,12 @@
                 <tbody>
                     {% for proyecto in proyectos %}
                     <tr>
-                        <td><h6 class='centrar2'>{{ proyecto.id }}</h6></td>
-                        <td><h6 class='centrar2'>{{ proyecto.nombre }}</h6></td>
-                        <td><h6 class='centrar2'>{{ proyecto.personas }}</h6></td>
-                        <td><h6 class='centrar2'>{{ proyecto.createdAt|date("d/m/Y H:i") }}</h6></td>
+                        <td><h6 class='centrar2'>{{ proyecto.idProyecto }}</h6></td>
+                        <td><h6 class='centrar2'>{{ proyecto.nombreProyecto }}</h6></td>
+                        <td><h6 class='centrar2'>{{ proyecto.nPersonas }}</h6></td>
+                        <td><h6 class='centrar2'>{{ proyecto.fechaCreacion|date("d/m/Y H:i") }}</h6></td>
                         <td><h6 class='centrar2'>
-                            <a href="{{ path('proyecto_show', {'id': proyecto.id}) }}" class="btn btn-info">Ver Proyecto</a>
+                            <a href="{{ path('proyecto_show', {'id': proyecto.idProyecto}) }}" class="btn btn-info">Ver Proyecto</a>
                         </h6></td>
                     </tr>
                     {% else %}

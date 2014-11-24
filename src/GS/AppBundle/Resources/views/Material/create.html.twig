@@ -5,7 +5,7 @@
 {% block id 'portada' %}
 
 {% block main %}
-
+ 
 <section>
     <div class="naranja space">&nbsp;</div>
     <div class="space-line">&nbsp;</div>
@@ -26,9 +26,10 @@
             <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 
         </div>
             <br/>
-        <center>
-    {{ form(formulario, {'attr': {'class': ' formulario'}}) }}
-            </center>
+        <h1 class="L L3">Nuevo Material</h1>
+        <h3 class="L L15 T3">C&oacute;digo  Material: <font style="color:red">{{id}}</font></h3>
+    {{ form(formulario, {'attr': {'class': ' formulario T8'}}) }}
+        
 
             <div class="L w100">
                 <img src="{{ asset('bundles/app/images/line-shadow.png') }}" class="line_shadowa"> 

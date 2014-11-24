@@ -5,7 +5,7 @@ namespace GS\AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use GS\AppBundle\Entity\Proyectos;
+use GS\AppBundle\Entity\Proyecto;
 use GS\AppBundle\Form\Proyecto\ProyectoType;
 
 class ProyectoController extends Controller
@@ -14,7 +14,7 @@ class ProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         
-        $proyectos = $em->getRepository('AppBundle:Proyectos')->findAll();
+        $proyectos = $em->getRepository('AppBundle:Proyecto')->findAll();
 
         return $this->render('AppBundle:Proyecto:index.html.twig', 
             array('proyectos' => $proyectos)
@@ -25,7 +25,7 @@ class ProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $proyecto = $em->getRepository('AppBundle:Proyectos')->find($id);
+        $proyecto = $em->getRepository('AppBundle:Proyecto')->find($id);
 
         if (!$proyecto) {
             throw $this->createNotFoundException('No se ha encontrado el proyecto solicitado.');
@@ -38,15 +38,18 @@ class ProyectoController extends Controller
 
     public function newAction(Request $request)
     {
-        $proyecto = new Proyectos();
+        $proyecto = new Proyecto();
 
         $formulario = $this->createForm(new ProyectoType(), $proyecto);
         $formulario->handleRequest($request);
 
         if ($formulario->isValid()) {
-            $proyecto->setCreatedAt(new \DateTime());
-            $proyecto->setUpdateAt(new \DateTime());
-            $proyecto->setUsuario("ADMIN");
+            $em = $this->getDoctrine()->getEntityManager();
+            $proyecto->setFechaCreacion(new \DateTime());
+            $totalProyectos = count($em->getRepository("AppBundle:Proyecto")->findAll());
+            $id = $this->getNextMaterialId($totalProyectos);            
+            $proyecto->setIdProyecto($id);
+            $proyecto->setUsuarioCreacion("ADMIN");
 
             $em = $this->getDoctrine()->getManager();
 
@@ -70,7 +73,7 @@ class ProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         
-        $proyecto = $em->getRepository('AppBundle:Proyectos')->find($id);
+        $proyecto = $em->getRepository('AppBundle:Proyecto')->find($id);
         
         if (!$proyecto) {
         throw $this->createNotFoundException('No se ha encontrado el proyecto solicitado');
@@ -105,7 +108,7 @@ class ProyectoController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $proyecto = $em->getRepository('AppBundle:Proyectos')->find($id);
+        $proyecto = $em->getRepository('AppBundle:Proyecto')->find($id);
 
         if (!$proyecto) {
             throw $this->createNotFoundException('No se ha encontrado el proyecto solicitado');
@@ -119,5 +122,13 @@ class ProyectoController extends Controller
         );
 
         return $this->redirect($this->generateUrl('proyecto_list'));
+    }
+    public function getNextMaterialId($nMateriales) {
+        $j = 4 -  strlen((string) $nMateriales);        
+        $cadenaAuxiliar="";
+        for ($i = 0; $i <= $j; $i++) {
+            $cadenaAuxiliar.="0";
+        }
+        return $cadenaAuxiliar.$nMateriales;
     }
 }

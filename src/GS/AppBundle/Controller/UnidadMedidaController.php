@@ -44,7 +44,7 @@ class UnidadMedidaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('unidadmedida_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('unidadmedida_show', array('id' => $entity->getIdUnidad())));
         }
 
         return $this->render('AppBundle:UnidadMedida:new.html.twig', array(
@@ -67,7 +67,7 @@ class UnidadMedidaController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Create','attr'=>array("class"=>"btn btn-primary")));
 
         return $form;
     }
@@ -217,7 +217,7 @@ class UnidadMedidaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('unidadmedida_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Delete','attr' => array('class' => 'btn btn-primary')))
             ->getForm()
         ;
     }

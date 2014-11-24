@@ -17,16 +17,7 @@
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
     <article class="w100 gris_claro-texturaspace">
         <dd class="R w100">
-        <dl class="w7 R R3">
-        <input class="btn btn-warning w100" type="button" value="Eliminar"/>    
-        </dl>
-        <dl class="w7 R R1">
-        <input class="btn btn-warning w100" type="button" value="Consulta"/>    
-        </dl>
-        <dl class="w7 R R1">
-        <input class="btn btn-warning w100" type="button" value="Editar"/>
-        </dl>
-        <dl class="w7 R R1">
+       <dl class="w7 R R1">
             <a href="{{path('categoria_new')}}">
                 <input class="btn btn-success w100" type="button" value="Nuevo"/>
             </a>
@@ -36,7 +27,7 @@
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
 </section>
 
-<div class="container">
+<div class="container w100">
 
 {% for flashMessage in app.session.flashbag.get('info') %}
 <div class="alert alert-info alert-dismissible" role="alert">
@@ -47,31 +38,29 @@
 </div>
 {% endfor %}
 
-<h1 class="L">Listado de Categorias</h1>
+<h1 class="L L3">Listado de Categorias</h1>
 
-<section class="w100 space-L1 L white-box">
+<section class="w100 space-L1  white-box">
     <fieldset class=" w100">
-        <div class="ConfigureScrollXTable  " >
+        <div class="ConfigureScrollXTable w40" >
             <!--sin scroll menos de 8 columnas-->
-            <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100  tableBlock">       
+            <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100 ">       
                 <!--con scroll mas de 8 columnas-->
                     <!--<table cellspacing="0" id="" class="tablepaginateScroll tablapaginacion w100 L tableBlock">-->
                 <thead>
-                <th><h6><center>Id</center></h6></th>
+                
                 <th><h6><center>Nombre</center></h6></th>
-                <th><h6><center>Descripción</center></h6></th>
-                <th><h6><center>Fecha Ingreso</center></h6></th>
+                <th><h6><center>Descripción</center></h6></th>                
                 <th><h6><center>Opcion</center></h6></th>
                 </thead>
                 <tbody>
                     {% for categoria in categorias %}
                     <tr>
-                        <td><h6 class='centrar2'>{{ categoria.id }}</h6></td>
-                        <td><h6 class='centrar2'>{{ categoria.nombre }}</h6></td>
-                        <td><h6 class='centrar2'>{{ categoria.descripcion }}</h6></td>
-                        <td><h6 class='centrar2'>{{ categoria.createdAt|date("d/m/Y H:i") }}</h6></td>
+                  
+                        <td><h6 class='centrar2'>{{ categoria.nombreCategoria }}</h6></td>
+                        <td><h6 class='centrar2'>{{ categoria.descripcionCategoria }}</h6></td>                        
                         <td><h6 class='centrar2'>
-                            <a href="{{ path('categoria_show', {'id': categoria.id}) }}" class="btn btn-info">Ver Categoria</a>
+                            <a href="{{ path('categoria_show', {'id': categoria.idCategoria}) }}" class="btn btn-info">Ver Categoria</a>
                         </h6></td>
                     </tr>
                     {% else %}

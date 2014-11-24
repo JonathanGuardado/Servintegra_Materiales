@@ -64,10 +64,10 @@ class Categoria extends \GS\AppBundle\Entity\Categoria implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'idCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'nombreCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'descripcionUnidad');
+            return array('__isInitialized__', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'idCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'nombreCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'descripcionCategoria');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'idCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'nombreCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'descripcionUnidad');
+        return array('__isInitialized__', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'idCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'nombreCategoria', '' . "\0" . 'GS\\AppBundle\\Entity\\Categoria' . "\0" . 'descripcionCategoria');
     }
 
     /**
@@ -179,7 +179,7 @@ class Categoria extends \GS\AppBundle\Entity\Categoria implements \Doctrine\ORM\
     public function getIdCategoria()
     {
         if ($this->__isInitialized__ === false) {
-            return  parent::getIdCategoria();
+            return (int)  parent::getIdCategoria();
         }
 
 
@@ -213,23 +213,23 @@ class Categoria extends \GS\AppBundle\Entity\Categoria implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function setDescripcionUnidad($descripcionUnidad)
+    public function setDescripcionCategoria($descripcionCategoria)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescripcionUnidad', array($descripcionUnidad));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescripcionCategoria', array($descripcionCategoria));
 
-        return parent::setDescripcionUnidad($descripcionUnidad);
+        return parent::setDescripcionCategoria($descripcionCategoria);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDescripcionUnidad()
+    public function getDescripcionCategoria()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescripcionUnidad', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescripcionCategoria', array());
 
-        return parent::getDescripcionUnidad();
+        return parent::getDescripcionCategoria();
     }
 
     /**

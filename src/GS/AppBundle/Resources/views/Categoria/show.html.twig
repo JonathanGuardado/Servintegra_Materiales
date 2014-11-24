@@ -7,26 +7,26 @@
 {% block main %}
 
 <div class="container">
-
-    <h1>Categoria {{ categoria.nombre }}</h1>
+    <form class="formulario">
+    <h1>Categoria {{ categoria.nombreCategoria }}</h1>
 
     <dl class="dl-horizontal">
         <dt>Nombre</dt>
-        <dd>{{ categoria.nombre }}</dd>
+        <dd>{{ categoria.nombreCategoria }}</dd>
 
         <dt>Descripcion</dt>
-        <dd>{{ categoria.descripcion }}</dd>
+        <dd>{{ categoria.descripcionCategoria }}</dd>
 
         <hr>
 
         <dt>&nbsp;</dt>
         <dd>
-            <a href="{{ path('categoria_edit', {'id': categoria.id}) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ path('categoria_delete', {'id': categoria.id}) }}" class="btn btn-danger">Eliminar</a>
+            <a href="{{ path('categoria_edit', {'id': categoria.idCategoria}) }}" class="btn btn-warning">Editar</a>
+            <a href="{{ path('categoria_delete', {'id': categoria.idCategoria}) }}" class="btn btn-danger">Eliminar</a>
         </dd>
 
     </dl>
-
+    </form>
 </div> <!-- /container -->
 
 {% endblock %}

@@ -9,12 +9,12 @@
 
     {{ form(edit_form, {'attr': {'class': ' formulario'}}) }}
 
-        <ul class="record_actions">
-    <li>
-        <a style="color:black" href="{{ path('unidadmedida') }}">
+        <ul class="record_actions not_style_list">
+        <li>
+        <a  href="{{ path('unidadmedida') }}" class="btn btn-primary">
             Regresar al listado
         </a>
-    </li>
+        </li>
    
-</ul>
+        </ul>
 {% endblock %}
