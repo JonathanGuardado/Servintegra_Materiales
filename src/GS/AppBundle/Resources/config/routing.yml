@@ -1,3 +1,11 @@
+app_presupuestomensual:
+    resource: "@AppBundle/Resources/config/routing/presupuestomensual.yml"
+    prefix:   /presupuestomensual
+
+app_ordenpresupuestada:
+    resource: "@AppBundle/Resources/config/routing/ordenpresupuestada.yml"
+    prefix:   /ordenpresupuestada
+
 app_unidadmedida:
     resource: "@AppBundle/Resources/config/routing/unidadmedida.yml"
     prefix:   /unidadmedida

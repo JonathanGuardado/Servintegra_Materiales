@@ -6,7 +6,7 @@
 
 {% block main %}
 
-<div class="container">
+<div class="container w50">
     <form class="formulario">
     <h1>Categoria {{ categoria.nombreCategoria }}</h1>
 
@@ -16,16 +16,12 @@
 
         <dt>Descripcion</dt>
         <dd>{{ categoria.descripcionCategoria }}</dd>
-
-        <hr>
-
-        <dt>&nbsp;</dt>
-        <dd>
-            <a href="{{ path('categoria_edit', {'id': categoria.idCategoria}) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ path('categoria_delete', {'id': categoria.idCategoria}) }}" class="btn btn-danger">Eliminar</a>
-        </dd>
-
+        <hr>   
     </dl>
+    <div class="B5">
+       <a href="{{ path('categoria_edit', {'id': categoria.idCategoria}) }}" class="btn btn-warning " >Editar</a>
+       <a href="{{ path('categoria_list') }}" class="btn btn-primary">Regresar al Listado</a>
+    </div>
     </form>
 </div> <!-- /container -->
 

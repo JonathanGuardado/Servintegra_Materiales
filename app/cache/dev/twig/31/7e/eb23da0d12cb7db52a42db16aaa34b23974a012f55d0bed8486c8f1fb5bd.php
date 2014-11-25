@@ -56,6 +56,16 @@ class __TwigTemplate_317eeb23da0d12cb7db52a42db16aaa34b23974a012f55d0bed8486c8f1
         // line 15
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), 'form', array("attr" => array("class" => "formulario form-horizontal")));
         echo "
+    <ul class=\"record_actions not_style_list\">
+        <li>
+            <a  href=\"";
+        // line 18
+        echo $this->env->getExtension('routing')->getPath("proyecto_list");
+        echo "\" class=\"btn btn-primary\">
+                Regresar al listado
+            </a>
+        </li>   
+    </ul>
 
 </div> <!-- /container -->
 
@@ -74,6 +84,6 @@ class __TwigTemplate_317eeb23da0d12cb7db52a42db16aaa34b23974a012f55d0bed8486c8f1
 
     public function getDebugInfo()
     {
-        return array (  57 => 15,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
+        return array (  63 => 18,  57 => 15,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
     }
 }

@@ -422,4 +422,8 @@ class Proyecto {
     {
         return $this->ordenes;
     }
+      public function __toString()
+    {
+        return $this->getNombreProyecto();
+    }
 }

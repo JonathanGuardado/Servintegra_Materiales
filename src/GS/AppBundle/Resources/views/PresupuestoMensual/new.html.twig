@@ -1,0 +1,24 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+<h1 class="L L3">Añadir Presupuesto Mensual</h1>
+
+    {{ form(form, {'attr': {'class': 'formulario form-horizontal T10' }}) }}
+<ul class="record_actions not_style_list">
+    <li>
+        <a class="btn btn-primary" href="{{path('unidadmedida') }}">
+            Regresar al listado
+        </a>
+    </li>
+</ul>
+
+{% endblock %}
+ {% block javascript %}
+<script type="text/javascript">
+    jQuery("#gs_appbundle_presupuestomensual_proyecto").val('{{idProyecto}}').change().attr("disabled","disabled").css({"cursor":"not-allowed"});
+ </script>
+ {% endblock %}

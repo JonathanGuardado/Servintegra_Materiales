@@ -1,0 +1,95 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %} Principal Servintegra {% endblock %}
+
+{% block id 'portada' %}
+
+{% block main %}
+
+<section>
+    <div class="naranja space">&nbsp;</div>
+    <div class="space-line">&nbsp;</div>
+    <div class="naranja space-line">&nbsp;</div>
+</section>
+
+<section>
+    <article class="w100 gris_claro-textura space">&nbsp;</article>
+    <article class="w100 gris_claro-textura space">&nbsp;</article>  
+    <article class="w100 gris_claro-texturaspace">
+        <dd class="R w100">        
+            <a href="{{path('presupuestomensual_new',{'idProyecto':idProyecto})}}">
+                <input class="btn btn-success R R2" type="button" value="Añadir"/>
+            </a>
+        </dl>
+        </dd>
+    </article>
+    <article class="w100 gris_claro-textura space">&nbsp;</article>  
+</section>
+
+<div class="container w100">
+
+{% for flashMessage in app.session.flashbag.get('info') %}
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+    <strong>Aviso, </strong> {{ flashMessage }}
+</div>
+{% endfor %}
+
+<h1 class="L L3">Listado de Presupuestos Mensuales</h1>
+<section class="w100 space-L1 L white-box">
+    <fieldset class="L w100">
+        <div class="ConfigureScrollXTable w95 " >
+            <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100 L tableBlock">       
+
+        <thead>
+            <tr>                
+                <th>Mes presupuesto</th>
+                <th>Año presupuesto</th>
+                <th>Presupuesto</th>
+                <th>Usuario creacion</th>
+                <th>Fecha creacion</th>
+                 <th>Modificado</th>
+                <th>Usuario modificacion</th>               
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+               
+                <td>{{ entity.mesPresupuesto }}</td>
+                <td>{{ entity.anioPresupuesto }}</td>
+                <td>{{ entity.presupuesto }}</td>
+                <td>{{ entity.usuarioCreacion }}</td>
+                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                 <td>{% if entity.fechaModificacion %}{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.usuarioModificacion }}</td>               
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('presupuestomensual_show', { 'id': entity.idPresupuestoMensual }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+              </table>
+        </div>
+    </fieldset>
+</section>
+
+</div> <!-- /container -->
+
+<section>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+    <div class="gris_claro space">&nbsp;</div>
+</section>
+    {% endblock %}

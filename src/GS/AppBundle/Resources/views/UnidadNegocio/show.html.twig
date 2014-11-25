@@ -5,9 +5,9 @@
 {% block id 'portada' %}
 
     {% block main %}
-    <h1 class="L L3">Unidad de Negocio</h1>
+    <h1 class="">Unidad de Negocio</h1>
 
-    <table class="record_properties T6">
+    <table class="record_properties T2">
         <tbody>
              <tr>
                 <th>Nombre unidad de negocio: </th>
@@ -19,18 +19,9 @@
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions not_style_list">
-    <li>
-        <a class="btn btn-primary T1" href="{{ path('unidadnegocio') }}">
-            Regresar al listado
-        </a>
-    </li>
-    <li>
-        <a class="btn btn-primary T1" href="{{ path('unidadnegocio_edit', { 'id': entity.idUnidadNegocio }) }}">
-            Editar
-        </a>
-    </li>
-    <!--<li>{{ form(delete_form) }}</li>-->
-</ul>
+<hr>
+   <div class="B5">
+       <a href="{{ path('unidadnegocio_edit', {'id': entity.idUnidadNegocio}) }}" class="btn btn-warning " >Editar</a>
+       <a href="{{ path('unidadnegocio') }}" class="btn btn-primary">Regresar al Listado</a>
+    </div>
 {% endblock %}

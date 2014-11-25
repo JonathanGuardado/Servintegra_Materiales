@@ -14,7 +14,7 @@ class __TwigTemplate_648646526df5bb32b660204099ea4faf16ab9a541622882886039e7eb17
             'stylesheets' => array($this, 'block_stylesheets'),
             'id' => array($this, 'block_id'),
             'body' => array($this, 'block_body'),
-            'javasingles' => array($this, 'block_javasingles'),
+            'javascript' => array($this, 'block_javascript'),
         );
     }
 
@@ -176,7 +176,7 @@ class __TwigTemplate_648646526df5bb32b660204099ea4faf16ab9a541622882886039e7eb17
 
 ";
         // line 73
-        $this->displayBlock('javasingles', $context, $blocks);
+        $this->displayBlock('javascript', $context, $blocks);
         // line 74
         echo "</body>
 </html>";
@@ -204,7 +204,7 @@ class __TwigTemplate_648646526df5bb32b660204099ea4faf16ab9a541622882886039e7eb17
     }
 
     // line 73
-    public function block_javasingles($context, array $blocks = array())
+    public function block_javascript($context, array $blocks = array())
     {
     }
 

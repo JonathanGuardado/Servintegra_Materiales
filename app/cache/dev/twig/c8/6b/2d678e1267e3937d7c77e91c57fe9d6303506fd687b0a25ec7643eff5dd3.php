@@ -45,7 +45,7 @@ class __TwigTemplate_c86b2d678e1267e3937d7c77e91c57fe9d6303506fd687b0a25ec7643ef
         echo "
 <div class=\"container w40\">
 
-    <h1>Categoria ";
+    <h1 class=\"L L3\">Poyecto ";
         // line 11
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["proyecto"]) ? $context["proyecto"] : $this->getContext($context, "proyecto")), "nombreProyecto", array()), "html", null, true);
         echo "</h1>
@@ -65,21 +65,23 @@ class __TwigTemplate_c86b2d678e1267e3937d7c77e91c57fe9d6303506fd687b0a25ec7643ef
 
         <hr>
 
-        <dt>&nbsp;</dt>
-        <dd>
-            
-           <!-- <a href=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("proyecto_delete", array("id" => $this->getAttribute((isset($context["proyecto"]) ? $context["proyecto"] : $this->getContext($context, "proyecto")), "idProyecto", array()))), "html", null, true);
-        echo "\" class=\"btn btn-danger\">Eliminar</a>-->
-        </dd>
+        
 
     </dl>
-    <a href=\"";
-        // line 29
+   <div class=\"B5 \">
+       <a href=\"";
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("proyecto_edit", array("id" => $this->getAttribute((isset($context["proyecto"]) ? $context["proyecto"] : $this->getContext($context, "proyecto")), "idProyecto", array()))), "html", null, true);
-        echo "\" class=\"btn btn-primary R30 B5\">Editar</a>
-
+        echo "\" class=\"btn btn-warning \" >Editar</a>
+       <a href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("presupuestomensual", array("idProyecto" => $this->getAttribute((isset($context["proyecto"]) ? $context["proyecto"] : $this->getContext($context, "proyecto")), "idProyecto", array()))), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Ver presupuesto</a>
+       <a href=\"";
+        // line 28
+        echo $this->env->getExtension('routing')->getPath("proyecto_list");
+        echo "\" class=\"btn btn-primary\">Regresar al Listado</a>
+    </div>
 </div> <!-- /container -->
 
 ";
@@ -97,6 +99,6 @@ class __TwigTemplate_c86b2d678e1267e3937d7c77e91c57fe9d6303506fd687b0a25ec7643ef
 
     public function getDebugInfo()
     {
-        return array (  80 => 29,  73 => 25,  63 => 18,  57 => 15,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
+        return array (  82 => 28,  78 => 27,  74 => 26,  63 => 18,  57 => 15,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
     }
 }

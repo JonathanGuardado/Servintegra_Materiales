@@ -1,0 +1,30 @@
+presupuestomensual:
+    path:     /{idProyecto}
+    defaults: { _controller: "AppBundle:PresupuestoMensual:index" }
+
+presupuestomensual_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:PresupuestoMensual:show" }
+
+presupuestomensual_new:
+    path:     /new/{idProyecto}
+    defaults: { _controller: "AppBundle:PresupuestoMensual:new" }
+
+presupuestomensual_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:PresupuestoMensual:create" }
+    requirements: { _method: post }
+
+presupuestomensual_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:PresupuestoMensual:edit" }
+
+presupuestomensual_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:PresupuestoMensual:update" }
+    requirements: { _method: post|put }
+
+presupuestomensual_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:PresupuestoMensual:delete" }
+    requirements: { _method: post|delete }

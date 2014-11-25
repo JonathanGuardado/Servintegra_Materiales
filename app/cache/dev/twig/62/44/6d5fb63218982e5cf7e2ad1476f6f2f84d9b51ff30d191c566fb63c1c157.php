@@ -45,15 +45,14 @@ class __TwigTemplate_62446d5fb63218982e5cf7e2ad1476f6f2f84d9b51ff30d191c566fb63c
         echo "
     <h1 class=\"L L3\">Creaci&oacute;n Unidad de Medida</h1>
     
-    ";
+   ";
         // line 11
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form', array("attr" => array("class" => "formulario form-horizontal T6")));
         echo "
-
         <ul class=\"record_actions not_style_list\">
     <li>
         <a class=\"btn btn-primary\" href=\"";
-        // line 15
+        // line 14
         echo $this->env->getExtension('routing')->getPath("unidadmedida");
         echo "\">
             Regresar al listado
@@ -75,6 +74,6 @@ class __TwigTemplate_62446d5fb63218982e5cf7e2ad1476f6f2f84d9b51ff30d191c566fb63c
 
     public function getDebugInfo()
     {
-        return array (  57 => 15,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
+        return array (  56 => 14,  50 => 11,  45 => 8,  42 => 7,  36 => 5,  30 => 3,);
     }
 }

@@ -1,0 +1,30 @@
+ordenpresupuestada:
+    path:     /
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:index" }
+
+ordenpresupuestada_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:show" }
+
+ordenpresupuestada_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:new" }
+
+ordenpresupuestada_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:create" }
+    requirements: { _method: post }
+
+ordenpresupuestada_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:edit" }
+
+ordenpresupuestada_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:update" }
+    requirements: { _method: post|put }
+
+ordenpresupuestada_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:OrdenPresupuestada:delete" }
+    requirements: { _method: post|delete }

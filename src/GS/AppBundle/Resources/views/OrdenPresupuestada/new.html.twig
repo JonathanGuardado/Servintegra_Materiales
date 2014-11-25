@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>OrdenPresupuestada creation</h1>
+
+    {{ form(form, {'attr': {'class': 'formulario') }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('ordenpresupuestada') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

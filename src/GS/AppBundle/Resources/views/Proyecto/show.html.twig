@@ -8,7 +8,7 @@
 
 <div class="container w40">
 
-    <h1>Categoria {{ proyecto.nombreProyecto }}</h1>
+    <h1 class="L L3">Poyecto {{ proyecto.nombreProyecto }}</h1>
 
     <dl class="dl-horizontal">
         <dt>Nombre</dt>
@@ -19,15 +19,14 @@
 
         <hr>
 
-        <dt>&nbsp;</dt>
-        <dd>
-            
-           <!-- <a href="{{ path('proyecto_delete', {'id': proyecto.idProyecto}) }}" class="btn btn-danger">Eliminar</a>-->
-        </dd>
+        
 
     </dl>
-    <a href="{{ path('proyecto_edit', {'id': proyecto.idProyecto}) }}" class="btn btn-primary R30 B5">Editar</a>
-
+   <div class="B5 ">
+       <a href="{{ path('proyecto_edit', {'id': proyecto.idProyecto}) }}" class="btn btn-warning " >Editar</a>
+       <a href="{{ path('presupuestomensual',{'idProyecto': proyecto.idProyecto}) }}" class="btn btn-primary">Ver presupuesto</a>
+       <a href="{{ path('proyecto_list') }}" class="btn btn-primary">Regresar al Listado</a>
+    </div>
 </div> <!-- /container -->
 
 {% endblock %}

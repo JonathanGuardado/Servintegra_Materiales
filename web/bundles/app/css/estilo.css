@@ -560,7 +560,7 @@ h4{
 
 }
 .formulario{
-    width: 60%;    
+    width: 58%;    
 }
 .formulario label{
     text-align: left;
@@ -570,13 +570,14 @@ h4{
 }
 .formulario  input,select,textarea{
     float:left;
-    width: 50%;
-    
+    width: 45%;
+    height: 33px;
 }
 .formulario .btn-success,.btn-danger{
     margin-top: 20px;
     float:left;
     width: 24%;
+    
     margin-left:1%; 
 }
 .TB{

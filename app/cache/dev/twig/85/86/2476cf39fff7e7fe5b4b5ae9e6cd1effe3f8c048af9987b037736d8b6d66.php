@@ -91,7 +91,7 @@ class __TwigTemplate_85862476cf39fff7e7fe5b4b5ae9e6cd1effe3f8c048af9987b037736d8
                     <li><a href=\"";
         // line 37
         echo $this->env->getExtension('routing')->getPath("proximamente");
-        echo "\">Movimientos</a></li>
+        echo "\">Ordenes</a></li>
                     <li> <a href=\"";
         // line 38
         echo $this->env->getExtension('routing')->getPath("proximamente");

@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>PresupuestoMensual</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idpresupuestomensual</th>
+                <td>{{ entity.idPresupuestoMensual }}</td>
+            </tr>
+            <tr>
+                <th>Mespresupuesto</th>
+                <td>{{ entity.mesPresupuesto }}</td>
+            </tr>
+            <tr>
+                <th>Aniopresupuesto</th>
+                <td>{{ entity.anioPresupuesto }}</td>
+            </tr>
+            <tr>
+                <th>Presupuesto</th>
+                <td>{{ entity.presupuesto }}</td>
+            </tr>
+            <tr>
+                <th>Usuariocreacion</th>
+                <td>{{ entity.usuarioCreacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechacreacion</th>
+                <td>{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Usuariomodificacion</th>
+                <td>{{ entity.usuarioModificacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechamodificacion</th>
+                <td>{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('presupuestomensual') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -122,6 +122,122 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/presupuestomensual')) {
+            // presupuestomensual
+            if (preg_match('#^/presupuestomensual/(?P<idProyecto>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::indexAction',));
+            }
+
+            // presupuestomensual_show
+            if (preg_match('#^/presupuestomensual/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual_show')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::showAction',));
+            }
+
+            // presupuestomensual_new
+            if (0 === strpos($pathinfo, '/presupuestomensual/new') && preg_match('#^/presupuestomensual/new/(?P<idProyecto>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual_new')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::newAction',));
+            }
+
+            // presupuestomensual_create
+            if ($pathinfo === '/presupuestomensual/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_presupuestomensual_create;
+                }
+
+                return array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::createAction',  '_route' => 'presupuestomensual_create',);
+            }
+            not_presupuestomensual_create:
+
+            // presupuestomensual_edit
+            if (preg_match('#^/presupuestomensual/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual_edit')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::editAction',));
+            }
+
+            // presupuestomensual_update
+            if (preg_match('#^/presupuestomensual/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_presupuestomensual_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual_update')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::updateAction',));
+            }
+            not_presupuestomensual_update:
+
+            // presupuestomensual_delete
+            if (preg_match('#^/presupuestomensual/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_presupuestomensual_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'presupuestomensual_delete')), array (  '_controller' => 'GS\\AppBundle\\Controller\\PresupuestoMensualController::deleteAction',));
+            }
+            not_presupuestomensual_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/ordenpresupuestada')) {
+            // ordenpresupuestada
+            if (rtrim($pathinfo, '/') === '/ordenpresupuestada') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'ordenpresupuestada');
+                }
+
+                return array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::indexAction',  '_route' => 'ordenpresupuestada',);
+            }
+
+            // ordenpresupuestada_show
+            if (preg_match('#^/ordenpresupuestada/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ordenpresupuestada_show')), array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::showAction',));
+            }
+
+            // ordenpresupuestada_new
+            if ($pathinfo === '/ordenpresupuestada/new') {
+                return array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::newAction',  '_route' => 'ordenpresupuestada_new',);
+            }
+
+            // ordenpresupuestada_create
+            if ($pathinfo === '/ordenpresupuestada/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_ordenpresupuestada_create;
+                }
+
+                return array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::createAction',  '_route' => 'ordenpresupuestada_create',);
+            }
+            not_ordenpresupuestada_create:
+
+            // ordenpresupuestada_edit
+            if (preg_match('#^/ordenpresupuestada/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ordenpresupuestada_edit')), array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::editAction',));
+            }
+
+            // ordenpresupuestada_update
+            if (preg_match('#^/ordenpresupuestada/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_ordenpresupuestada_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ordenpresupuestada_update')), array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::updateAction',));
+            }
+            not_ordenpresupuestada_update:
+
+            // ordenpresupuestada_delete
+            if (preg_match('#^/ordenpresupuestada/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_ordenpresupuestada_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ordenpresupuestada_delete')), array (  '_controller' => 'GS\\AppBundle\\Controller\\OrdenPresupuestadaController::deleteAction',));
+            }
+            not_ordenpresupuestada_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/unidad')) {
             if (0 === strpos($pathinfo, '/unidadmedida')) {
                 // unidadmedida

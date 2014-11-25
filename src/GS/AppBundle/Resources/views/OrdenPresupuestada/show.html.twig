@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>OrdenPresupuestada</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idordenpresupuestada</th>
+                <td>{{ entity.idOrdenPresupuestada }}</td>
+            </tr>
+            <tr>
+                <th>Preciopresupuesto</th>
+                <td>{{ entity.precioPresupuesto }}</td>
+            </tr>
+            <tr>
+                <th>Cantidadpresupuesto</th>
+                <td>{{ entity.cantidadPresupuesto }}</td>
+            </tr>
+            <tr>
+                <th>Usuariocreacion</th>
+                <td>{{ entity.usuarioCreacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechacreacion</th>
+                <td>{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Usuariomodificacion</th>
+                <td>{{ entity.usuarioModificacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechamodificacion</th>
+                <td>{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('ordenpresupuestada') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('ordenpresupuestada_edit', { 'id': entity.idOrdenPresupuestada }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

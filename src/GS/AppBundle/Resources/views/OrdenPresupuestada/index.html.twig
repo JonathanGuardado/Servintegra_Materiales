@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>OrdenPresupuestada list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Idordenpresupuestada</th>
+                <th>Preciopresupuesto</th>
+                <th>Cantidadpresupuesto</th>
+                <th>Usuariocreacion</th>
+                <th>Fechacreacion</th>
+                <th>Usuariomodificacion</th>
+                <th>Fechamodificacion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('ordenpresupuestada_show', { 'id': entity.idOrdenPresupuestada }) }}">{{ entity.idOrdenPresupuestada }}</a></td>
+                <td>{{ entity.precioPresupuesto }}</td>
+                <td>{{ entity.cantidadPresupuesto }}</td>
+                <td>{{ entity.usuarioCreacion }}</td>
+                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.usuarioModificacion }}</td>
+                <td>{% if entity.fechaModificacion %}{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('ordenpresupuestada_show', { 'id': entity.idOrdenPresupuestada }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('ordenpresupuestada_edit', { 'id': entity.idOrdenPresupuestada }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('ordenpresupuestada_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

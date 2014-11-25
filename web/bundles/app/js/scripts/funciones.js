@@ -11,9 +11,9 @@ jQuery(document).ready(function() {
     
     jQuery('#desde , .date').datepicker({
         dateFormat: 'dd/mm/yy',
-        showOn: "button",
-        buttonImage: "../../bundles/app/images/ico-calendario.png",
-        buttonImageOnly: true,
+        //showOn: "button",
+        //buttonImage: "../../bundles/app/images/ico-calendario.png",
+        //buttonImageOnly: true,
         monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
             'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
         monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
