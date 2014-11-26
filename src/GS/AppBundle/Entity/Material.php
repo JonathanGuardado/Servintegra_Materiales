@@ -91,6 +91,13 @@ class Material
      * @ORM\Column(name="USUARIO_MODIFICACION", type="string", length=50, nullable=true)
      */
     private $usuarioModificacion;
+    
+     /**
+     * @var float
+     *
+     * @ORM\Column(name="EXISTENCIA_MINIMA", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $existenciaMinima;
 
     /**
      * @var \DateTime
@@ -240,6 +247,33 @@ class Material
         return $this->existenciaActual;
     }
 
+    
+    
+    /**
+     * Set existenciaActual
+     *
+     * @param float $existenciaMinima
+     * @return Material
+     */
+    public function setExistenciaMinima($existenciaMinima)
+    {
+        $this->existenciaMinima = $existenciaMinima;
+
+        return $this;
+    }
+
+    /**
+     * Get existenciaMinima
+     *
+     * @return float 
+     */
+    public function getExistenciaMinima()
+    {
+        return $this->existenciaMinima;
+    }
+    
+    
+    
     /**
      * Set cantidadReorden
      *

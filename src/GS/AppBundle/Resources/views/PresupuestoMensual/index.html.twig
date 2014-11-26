@@ -20,7 +20,7 @@
             <a href="{{path('presupuestomensual_new',{'idProyecto':idProyecto})}}">
                 <input class="btn btn-success R R2" type="button" value="Añadir"/>
             </a>
-        </dl>
+            </dl>
         </dd>
     </article>
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
@@ -29,67 +29,71 @@
 <div class="container w100">
 
 {% for flashMessage in app.session.flashbag.get('info') %}
-<div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-    </button>
-    <strong>Aviso, </strong> {{ flashMessage }}
-</div>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <strong>Aviso, </strong> {{ flashMessage }}
+    </div>
 {% endfor %}
+    <div class="w100" style="height:70px">
+        <h1 class="L L3">Listado Detalles Mensuales</h1><br/>
+    </div>
+    <div class="w100">
+        <h3 class="L L3 ">Proyecto :<span style="color:red">{{ proyecto }}</span></h3>
+    </div>
+    <section class="w100 space-L1 L white-box">
+        <fieldset class="L w100">
+            <div class="ConfigureScrollXTable w95 " >
+                <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100 L tableBlock">       
 
-<h1 class="L L3">Listado de Presupuestos Mensuales</h1>
-<section class="w100 space-L1 L white-box">
-    <fieldset class="L w100">
-        <div class="ConfigureScrollXTable w95 " >
-            <table cellspacing="0" id="" class="tablepaginate dataTable tablapaginacion w100 L tableBlock">       
-
-        <thead>
-            <tr>                
-                <th>Mes presupuesto</th>
-                <th>Año presupuesto</th>
-                <th>Presupuesto</th>
-                <th>Usuario creacion</th>
-                <th>Fecha creacion</th>
-                 <th>Modificado</th>
-                <th>Usuario modificacion</th>               
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+                    <thead>
+                        <tr>                
+                            <th>Mes presupuesto</th>
+                            <th>Año presupuesto</th>
+                            <th>Presupuesto</th>
+                            <th>Usuario creacion</th>
+                            <th>Fecha creacion</th>
+                            <th>Modificado</th>
+                            <th>Usuario modificacion</th>               
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
         {% for entity in entities %}
-            <tr>
-               
-                <td>{{ entity.mesPresupuesto }}</td>
-                <td>{{ entity.anioPresupuesto }}</td>
-                <td>{{ entity.presupuesto }}</td>
-                <td>{{ entity.usuarioCreacion }}</td>
-                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
-                 <td>{% if entity.fechaModificacion %}{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.usuarioModificacion }}</td>               
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('presupuestomensual_show', { 'id': entity.idPresupuestoMensual }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
+                            <tr>
+
+                                <td>{{ entity.mesPresupuesto }}</td>
+                                <td>{{ entity.anioPresupuesto }}</td>
+                                <td>{{ entity.presupuesto }}</td>
+                                <td>{{ entity.usuarioCreacion }}</td>
+                                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{% if entity.fechaModificacion %}{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{{ entity.usuarioModificacion }}</td>               
+                                <td>
+                                    <ul style="list-style:none">
+                                        <li>
+                                            <a class="btn btn-info w60" href="{{ path('presupuestomensual_show', { 'id': entity.idPresupuestoMensual }) }}">Ver detalle</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-warning T1 w60" href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}">Editar</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
         {% endfor %}
-        </tbody>
-              </table>
-        </div>
-    </fieldset>
-</section>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </section>
 
-</div> <!-- /container -->
+    </div> <!-- /container -->
 
-<section>
-    <div class="gris_claro space">&nbsp;</div>
-    <div class="gris_claro space">&nbsp;</div>
-    <div class="gris_claro space">&nbsp;</div>
-    <div class="gris_claro space">&nbsp;</div>
-</section>
+    <section>
+        <div class="gris_claro space">&nbsp;</div>
+        <div class="gris_claro space">&nbsp;</div>
+        <div class="gris_claro space">&nbsp;</div>
+        <div class="gris_claro space">&nbsp;</div>
+    </section>
     {% endblock %}

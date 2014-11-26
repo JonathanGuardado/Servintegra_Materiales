@@ -40,7 +40,7 @@ table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }
 table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 /*Table wrapper*/
 .dataTables_wrapper {
-    position: relative;
+   /* position: relative;*/
     clear: both;
     *zoom: 1;
 }
@@ -205,8 +205,8 @@ table.dataTable thead td:active {
 }
 .ConfigureScrollXTable div.dataTables_wrapper {
 /*   min-width: 1305px !important;*/
-   // max-width: 1305px  !important;
-    //float: left;
+   /* max-width: 1305px  !important;
+   float: left;*/
 
 }
 

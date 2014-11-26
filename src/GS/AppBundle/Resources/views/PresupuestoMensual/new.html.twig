@@ -5,12 +5,13 @@
 {% block id 'portada' %}
 
 {% block main %}
-<h1 class="L L3">Añadir Presupuesto Mensual</h1>
+<h1 class="L L3">Añadir Presupuesto Mensual </h1>
+<h3 class="L L3 T3">Proyecto: <span style="color:red">{{proyecto}}</span></h3>
 
     {{ form(form, {'attr': {'class': 'formulario form-horizontal T10' }}) }}
 <ul class="record_actions not_style_list">
     <li>
-        <a class="btn btn-primary" href="{{path('unidadmedida') }}">
+        <a class="btn btn-primary" href="{{path('presupuestomensual',{'idProyecto':idProyecto}) }}">
             Regresar al listado
         </a>
     </li>
@@ -19,6 +20,7 @@
 {% endblock %}
  {% block javascript %}
 <script type="text/javascript">
-    jQuery("#gs_appbundle_presupuestomensual_proyecto").val('{{idProyecto}}').change().attr("disabled","disabled").css({"cursor":"not-allowed"});
+    jQuery("#gs_appbundle_presupuestomensual_proyecto").val('{{idProyecto}}').change();
+    jQuery("#gs_appbundle_presupuestomensual_proyecto , label[for='gs_appbundle_presupuestomensual_proyecto']").css("display","none")
  </script>
  {% endblock %}

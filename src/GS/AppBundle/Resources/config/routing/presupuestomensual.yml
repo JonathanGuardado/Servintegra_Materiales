@@ -1,6 +1,7 @@
 presupuestomensual:
     path:     /{idProyecto}
     defaults: { _controller: "AppBundle:PresupuestoMensual:index" }
+    requirements: { idProyecto: \d\d\d\d\d }
 
 presupuestomensual_show:
     path:     /{id}/show

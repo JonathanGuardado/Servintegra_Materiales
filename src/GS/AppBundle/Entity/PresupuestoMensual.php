@@ -82,9 +82,7 @@ class PresupuestoMensual
     private $proyecto;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /**
-     * @ORM\OneToMany(targetEntity="Excedente", mappedBy="PresupuestoMensual")
-     */
+    
     private $excedentes;
 
     public function __construct() {

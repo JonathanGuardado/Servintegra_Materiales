@@ -3079,7 +3079,7 @@
 			if ( oSettings.oScroll.bAutoCss )
 			{
 				nScrollHead.style.overflow = "hidden";
-				nScrollHead.style.position = "relative";
+				//nScrollHead.style.position = "relative";
 				nScrollFoot.style.overflow = "hidden";
 				nScrollBody.style.overflow = "auto";
 			}

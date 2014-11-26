@@ -22,10 +22,12 @@ class PresupuestoMensualController extends Controller
      */
     public function indexAction($idProyecto)
     {
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();        
         $presupuestos = $em->getRepository('AppBundle:PresupuestoMensual')->findByProyecto($idProyecto);       
+        $proyecto= $this->getProyecto($idProyecto);
         return $this->render('AppBundle:PresupuestoMensual:index.html.twig', array(
             'idProyecto'=>$idProyecto,
+            'proyecto'=>$proyecto,
             'entities' => $presupuestos
         ));
     }
@@ -41,10 +43,13 @@ class PresupuestoMensualController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            
+            $entity->setFechaCreacion(new \DateTime());          
+            $entity->setUsuarioCreacion("ADMIN");
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('presupuestomensual_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('presupuestomensual', array('idProyecto' => $entity->getProyecto()->getIdProyecto())));
         }
 
         return $this->render('AppBundle:PresupuestoMensual:new.html.twig', array(
@@ -80,9 +85,10 @@ class PresupuestoMensualController extends Controller
     {
         $entity = new PresupuestoMensual();
         $form   = $this->createCreateForm($entity);
-
+        $proyecto= $this->getProyecto($idProyecto);
         return $this->render('AppBundle:PresupuestoMensual:new.html.twig', array(
             'entity' => $entity,
+            'proyecto' => $proyecto,
             'idProyecto'=>$idProyecto,
             'form'   => $form->createView(),
         ));
@@ -221,5 +227,10 @@ class PresupuestoMensualController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+    private function getProyecto($idProyecto){
+        $em = $this->getDoctrine()->getManager();
+        $Proyecto=$em->getRepository("AppBundle:Proyecto")->find($idProyecto)->getNombreProyecto();
+        return $Proyecto;
     }
 }

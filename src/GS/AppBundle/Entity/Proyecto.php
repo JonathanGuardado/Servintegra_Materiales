@@ -104,14 +104,10 @@ class Proyecto {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * @ORM\OneToMany(targetEntity="OrdenSalida", mappedBy="Proyecto")
-     */
+  
     private $ordenes;
 
-    /**
-     * @ORM\OneToMany(targetEntity="PresupuestoMensual", mappedBy="Proyecto")
-     */
+    
     private $presupuestos;
 
     public function __construct() {

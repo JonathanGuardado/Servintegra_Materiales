@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/wamp/www/servintegra_materiales/app/config/routing_dev.yml'
