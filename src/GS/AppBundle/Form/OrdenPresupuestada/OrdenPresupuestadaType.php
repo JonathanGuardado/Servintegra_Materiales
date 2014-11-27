@@ -1,6 +1,6 @@
 <?php
 
-namespace GS\AppBundle\Form;
+namespace GS\AppBundle\Form\OrdenPresupuestada;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

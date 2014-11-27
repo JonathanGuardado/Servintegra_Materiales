@@ -1,12 +1,12 @@
 <?php
 
-namespace GS\AppBundle\Form;
+namespace GS\AppBundle\Form\UnidadNegocio;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class UnidadMedidaType extends AbstractType
+class UnidadNegocioType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,8 +15,8 @@ class UnidadMedidaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombreUnidad',"text")
-            ->add('descripcionUnidad')                 
+            ->add('nombreUnidadNegocio','text')
+            ->add('descripcionUnidadNegocio')
         ;
     }
     
@@ -26,7 +26,7 @@ class UnidadMedidaType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'GS\AppBundle\Entity\UnidadMedida'
+            'data_class' => 'GS\AppBundle\Entity\UnidadNegocio'
         ));
     }
 
@@ -35,6 +35,6 @@ class UnidadMedidaType extends AbstractType
      */
     public function getName()
     {
-        return 'gs_appbundle_unidadmedida';
+        return 'gs_appbundle_unidadnegocio';
     }
 }

@@ -16,6 +16,7 @@ class MaterialType extends AbstractType {
                 ->add('costoMaterial')
                 ->add('precioMaterial')
                 ->add('existenciaActual')
+                ->add('cantidadReorden','text',array('label'=>'Existencia Minima'))
                 ->add('ubicacion')                
                 ->add('unidadMedida')
                 ->add('estado')                

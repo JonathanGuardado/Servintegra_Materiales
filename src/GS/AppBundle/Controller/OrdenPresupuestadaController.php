@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use GS\AppBundle\Entity\OrdenPresupuestada;
-use GS\AppBundle\Form\OrdenPresupuestadaType;
+use GS\AppBundle\Form\OrdenPresupuestada\OrdenPresupuestadaType;
 
 /**
  * OrdenPresupuestada controller.

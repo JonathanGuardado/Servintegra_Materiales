@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use GS\AppBundle\Entity\Proyecto;
 use GS\AppBundle\Entity\PresupuestoMensual;
-use GS\AppBundle\Form\PresupuestoMensualType;
+use GS\AppBundle\Form\PresupuestoMensual\PresupuestoMensualType;
 
 /**
  * PresupuestoMensual controller.
@@ -129,12 +129,13 @@ class PresupuestoMensualController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find PresupuestoMensual entity.');
         }
-
+        $Proyecto= $entity->getProyecto();
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AppBundle:PresupuestoMensual:edit.html.twig', array(
             'entity'      => $entity,
+            'idProyecto'=> $Proyecto->getIdProyecto(),
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -150,7 +151,7 @@ class PresupuestoMensualController extends Controller
     private function createEditForm(PresupuestoMensual $entity)
     {
         $form = $this->createForm(new PresupuestoMensualType(), $entity, array(
-            'action' => $this->generateUrl('presupuestomensual_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('presupuestomensual_update', array('id' => $entity->getIdPresupuestoMensual())),
             'method' => 'PUT',
         ));
 

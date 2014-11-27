@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use GS\AppBundle\Entity\UnidadNegocio;
-use GS\AppBundle\Form\UnidadNegocioType;
+use GS\AppBundle\Form\UnidadNegocio\UnidadNegocioType;
 
 /**
  * UnidadNegocio controller.

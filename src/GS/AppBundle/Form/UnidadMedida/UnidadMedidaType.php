@@ -1,12 +1,12 @@
 <?php
 
-namespace GS\AppBundle\Form;
+namespace GS\AppBundle\Form\UnidadMedida;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PresupuestoMensualType extends AbstractType
+class UnidadMedidaType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,10 +15,8 @@ class PresupuestoMensualType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('mesPresupuesto','integer',array('label' => 'Mes'))
-            ->add('anioPresupuesto','text',array('label' => 'Año'))
-            ->add('presupuesto')                             
-            ->add('proyecto')
+            ->add('nombreUnidad',"text")
+            ->add('descripcionUnidad')                 
         ;
     }
     
@@ -28,7 +26,7 @@ class PresupuestoMensualType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'GS\AppBundle\Entity\PresupuestoMensual'
+            'data_class' => 'GS\AppBundle\Entity\UnidadMedida'
         ));
     }
 
@@ -37,6 +35,6 @@ class PresupuestoMensualType extends AbstractType
      */
     public function getName()
     {
-        return 'gs_appbundle_presupuestomensual';
+        return 'gs_appbundle_unidadmedida';
     }
 }

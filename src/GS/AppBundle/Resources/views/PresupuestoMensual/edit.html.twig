@@ -3,14 +3,14 @@
 {% block body -%}
     <h1>PresupuestoMensual edit</h1>
 
-    {{ form(edit_form) }}
+    {{ form(edit_form, {'attr': {'class': 'formulario form-horizontal '}}) }}
 
-        <ul class="record_actions">
+    <ul class="record_actions" style="list-style: none">
     <li>
-        <a href="{{ path('presupuestomensual') }}">
-            Back to the list
+        <a class="btn btn-primary" href="{{ path('presupuestomensual',{'idProyecto':idProyecto}) }}">
+            Regresar al Listado
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+{#    <li>{{ form(delete_form) }}</li>#}
 </ul>
 {% endblock %}

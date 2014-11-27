@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use GS\AppBundle\Entity\UnidadMedida;
-use GS\AppBundle\Form\UnidadMedidaType;
+use GS\AppBundle\Form\UnidadMedida\UnidadMedidaType;
 
 /**
  * UnidadMedida controller.
