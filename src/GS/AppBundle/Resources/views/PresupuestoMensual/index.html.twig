@@ -40,7 +40,10 @@
         <h1 class="L L3">Listado Detalles Mensuales</h1><br/>
     </div>
     <div class="w100">
-        <h3 class="L L3 ">Proyecto :<span style="color:red">{{ proyecto }}</span></h3>
+        <h3 class="L L3 ">Proyecto :<span style="color:red">{{ proyecto.nombreProyecto }}</span></h3>
+        <h3 class="L L3 ">Presupuesto Anual :<span style="color:red">{{ proyecto.presupuesto }}</span></h3>
+        <h3 class="L L3 ">Monto Usados :<span style="color:red">{{ detalleProyecto.saldoUsado }}</span></h3>
+        <h3 class="L L3 ">Monto Disponible :<span style="color:red">{{ detalleProyecto.saldoDisponible }}</span></h3>
     </div>
     <section class="w100 space-L1 L white-box">
         <fieldset class="L w100">
@@ -63,7 +66,7 @@
         {% for entity in entities %}
                             <tr>
 
-                                <td>{{ entity.mesPresupuesto }}</td>
+                                <td>{{ meses[entity.mesPresupuesto] }}</td>
                                 <td>{{ entity.anioPresupuesto }}</td>
                                 <td>{{ entity.presupuesto }}</td>
                                 <td>{{ entity.usuarioCreacion }}</td>

@@ -28,6 +28,15 @@
             <br/>
         <h1 class="L L3">Nuevo Material</h1>
         <h3 class="L L15 T3">C&oacute;digo  Material: <font style="color:red">{{id}}</font></h3>
+        
+            {% for flashMessage in app.session.flashbag.get('info') %}
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <strong>Aviso, </strong> {{ flashMessage }}
+                </div>
+            {% endfor %}
     {{ form(formulario, {'attr': {'class': ' formulario T8'}}) }}
         
 

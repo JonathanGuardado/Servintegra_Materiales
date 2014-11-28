@@ -21,13 +21,18 @@ class PresupuestoMensualController extends Controller
      *
      */
     public function indexAction($idProyecto)
-    {
-        $em = $this->getDoctrine()->getManager();        
+    {   $meses = array('1' => 'Enero','2' => 'Febrero','3' => 'Marzo','4' => 'Abril','5' => 'Mayo','6' => 'Junio','7' => 'Julio','8' => 'Agosto','9' => 'Septiembre','10' => 'Octubre','11' => 'Noviembre','12' => 'Diciembre');
+        $em = $this->getDoctrine()->getManager();           
         $presupuestos = $em->getRepository('AppBundle:PresupuestoMensual')->findByProyecto($idProyecto);       
-        $proyecto= $this->getProyecto($idProyecto);
+        $proyecto= $this->getProyecto($idProyecto);        
+        $saldoUsado=$this->getSaldoUsado($presupuestos);
+        $saldoDisponible=$proyecto->getPresupuesto()-$saldoUsado;
+        $detalleProyecto=array('saldoUsado'=>$saldoUsado,'saldoDisponible'=>$saldoDisponible);
         return $this->render('AppBundle:PresupuestoMensual:index.html.twig', array(
             'idProyecto'=>$idProyecto,
+            'meses'=>$meses,
             'proyecto'=>$proyecto,
+            'detalleProyecto'=>$detalleProyecto,
             'entities' => $presupuestos
         ));
     }
@@ -36,24 +41,34 @@ class PresupuestoMensualController extends Controller
      *
      */
     public function createAction(Request $request)
-    {
+    {   
+        $em = $this->getDoctrine()->getManager();     
         $entity = new PresupuestoMensual();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            
+        $proyecto= $form->getData()->getProyecto();
+        $presupuestos = $em->getRepository('AppBundle:PresupuestoMensual')->findByProyecto($proyecto);       
+        $saldoUsado=$this->getSaldoUsado($presupuestos);
+        $saldoDisponible=$proyecto->getPresupuesto()-$saldoUsado;
+        $presupuestoMensual=$form->getData()->getPresupuesto();
+          
+        if($presupuestoMensual<=$saldoDisponible){
+        if ($form->isValid()) {                   
             $entity->setFechaCreacion(new \DateTime());          
             $entity->setUsuarioCreacion("ADMIN");
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('presupuestomensual', array('idProyecto' => $entity->getProyecto()->getIdProyecto())));
+        }    
+        }else{
+        $this->get('session')->getFlashBag()->add('Error', 'No puede Exceder su Monto disponible');   
         }
-
+         $detalleProyecto=array('saldoUsado'=>$saldoUsado,'saldoDisponible'=>$saldoDisponible);
         return $this->render('AppBundle:PresupuestoMensual:new.html.twig', array(
             'entity' => $entity,
+            'proyecto'=>$proyecto,
+            'detalleProyecto'=>$detalleProyecto,
             'form'   => $form->createView(),
         ));
     }
@@ -86,10 +101,16 @@ class PresupuestoMensualController extends Controller
         $entity = new PresupuestoMensual();
         $form   = $this->createCreateForm($entity);
         $proyecto= $this->getProyecto($idProyecto);
+        $em = $this->getDoctrine()->getManager();           
+        $presupuestos = $em->getRepository('AppBundle:PresupuestoMensual')->findByProyecto($idProyecto);                    
+        $saldoUsado=$this->getSaldoUsado($presupuestos);
+        $saldoDisponible=$proyecto->getPresupuesto()-$saldoUsado;
+        $detalleProyecto=array('saldoUsado'=>$saldoUsado,'saldoDisponible'=>$saldoDisponible);
         return $this->render('AppBundle:PresupuestoMensual:new.html.twig', array(
             'entity' => $entity,
             'proyecto' => $proyecto,
-            'idProyecto'=>$idProyecto,
+            'idProyecto'=>$idProyecto,            
+            'detalleProyecto'=>$detalleProyecto,
             'form'   => $form->createView(),
         ));
     }
@@ -231,7 +252,14 @@ class PresupuestoMensualController extends Controller
     }
     private function getProyecto($idProyecto){
         $em = $this->getDoctrine()->getManager();
-        $Proyecto=$em->getRepository("AppBundle:Proyecto")->find($idProyecto)->getNombreProyecto();
+        $Proyecto=$em->getRepository("AppBundle:Proyecto")->find($idProyecto);
         return $Proyecto;
+    }
+    private function getSaldoUsado($presupuestosMensuales){       
+       $saldoUsado=0.0;
+       foreach($presupuestosMensuales as $presupuesto){
+            $saldoUsado+=$presupuesto->getPresupuesto();
+       }
+       return $saldoUsado;
     }
 }

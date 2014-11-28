@@ -6,21 +6,37 @@
 
 {% block main %}
 <h1 class="L L3">Añadir Presupuesto Mensual </h1>
-<h3 class="L L3 T3">Proyecto: <span style="color:red">{{proyecto}}</span></h3>
 
-    {{ form(form, {'attr': {'class': 'formulario form-horizontal T10' }}) }}
-<ul class="record_actions not_style_list">
-    <li>
-        <a class="btn btn-primary" href="{{path('presupuestomensual',{'idProyecto':idProyecto}) }}">
-            Regresar al listado
-        </a>
-    </li>
-</ul>
-
+<div class="w85 T6">
+    <div class="w35 L">
+        
+        <h3 class="L w100 text-left ">Proyecto :<span style="color:red;float:right">{{ proyecto.nombreProyecto }}</span></h3>
+        <h3 class="L w100 text-left">Presupuesto Anual :<span style="color:red;float:right">{{ proyecto.presupuesto }}</span></h3>
+        <h3 class="L w100 text-left">Monto Usados :<span style="color:red;float:right">{{ detalleProyecto.saldoUsado }}</span></h3>
+        <h3 class="L w100 text-left">Monto Disponible :<span style="color:red;float:right">{{ detalleProyecto.saldoDisponible }}</span></h3>
+    </div>
+    <div class="w65 L">        
+            {% for flashMessage in app.session.flashbag.get('Error') %}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <strong>Aviso, </strong> {{ flashMessage }}
+                </div>
+            {% endfor %}
+    {{ form(form, {'attr': {'class': 'formulario T3 R10' }}) }}
+            <ul class="record_actions not_style_list">
+                <li>
+                    <a class="btn btn-primary R15"  href="{{path('presupuestomensual',{'idProyecto':proyecto.idProyecto}) }}">
+                        Regresar al listado
+                    </a>
+                </li>
+            </ul>
+        </div></div>
 {% endblock %}
  {% block javascript %}
-<script type="text/javascript">
-    jQuery("#gs_appbundle_presupuestomensual_proyecto").val('{{idProyecto}}').change();
-    jQuery("#gs_appbundle_presupuestomensual_proyecto , label[for='gs_appbundle_presupuestomensual_proyecto']").css("display","none")
- </script>
+    <script type="text/javascript">
+        jQuery("#gs_appbundle_presupuestomensual_proyecto").val('{{proyecto.idProyecto}}').change();
+        jQuery("#gs_appbundle_presupuestomensual_proyecto , label[for='gs_appbundle_presupuestomensual_proyecto']").css("display", "none");
+        </script>
  {% endblock %}

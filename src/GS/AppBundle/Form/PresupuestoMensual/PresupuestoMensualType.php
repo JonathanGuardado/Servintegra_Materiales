@@ -15,7 +15,7 @@ class PresupuestoMensualType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('mesPresupuesto','integer',array('label' => 'Mes'))
+            ->add('mesPresupuesto','choice',array('label' => 'Mes','choices'=>array('1' => 'Enero','2' => 'Febrero','3' => 'Marzo','4' => 'Abril','5' => 'Mayo','6' => 'Junio','7' => 'Julio','8' => 'Agosto','9' => 'Septiembre','10' => 'Octubre','11' => 'Noviembre','12' => 'Diciembre')))
             ->add('anioPresupuesto','text',array('label' => 'Año'))
             ->add('presupuesto')                             
             ->add('proyecto')
