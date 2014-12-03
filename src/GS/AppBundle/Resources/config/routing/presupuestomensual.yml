@@ -10,9 +10,10 @@ presupuestomensual_show:
 presupuestomensual_new:
     path:     /new/{idProyecto}
     defaults: { _controller: "AppBundle:PresupuestoMensual:new" }
+    requirements: { idProyecto: \d\d\d\d\d }
 
 presupuestomensual_create:
-    path:     /create
+    path:     /create/
     defaults: { _controller: "AppBundle:PresupuestoMensual:create" }
     requirements: { _method: post }
 

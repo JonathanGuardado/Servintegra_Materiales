@@ -18,13 +18,13 @@ body{
 .divcontainer {
     background: white;
     position: absolute;
-/*    left: 50%;*/
+    /*    left: 50%;*/
     float: left;
-/*    top: 6.7%;*/
+    /*    top: 6.7%;*/
     width: 100%;
-/*    margin-left: -480px;*/
+    /*    margin-left: -480px;*/
     min-height: 120px;
-/*        border: 1px solid blue;*/
+    /*        border: 1px solid blue;*/
 }
 
 .divcontainer_login {
@@ -66,16 +66,16 @@ input[placeholder], [placeholder], *[placeholder]{
     width:100%;
     min-height: 10px;
     float:left;
-/*    border: 1px solid green;*/
+    /*    border: 1px solid green;*/
 }
 .footer{
-/*    margin-top: -4%;*/
-/*    top: 6.7%;*/
-/*    margin-left: -480px;*/
+    /*    margin-top: -4%;*/
+    /*    top: 6.7%;*/
+    /*    margin-left: -480px;*/
     min-height:133px;
     width:100%;
     float:left;
-/*    border:1px solid red;*/
+    /*    border:1px solid red;*/
 }
 .borde-red{border: 1px solid red;}
 .L{
@@ -457,116 +457,118 @@ input[placeholder], [placeholder], *[placeholder]{
 
 @media screen and (min-width: 768px){
     .contentsection{
-    width:100%;
-    float:left;
-    min-height: 300px;
-    height: auto;
+        width:100%;
+        float:left;
+        min-height: 300px;
+        height: auto;
 
-}
-h4{
-    font-size: 19px !important;
-}
-.erp{
-    background-position: center;
-    height:400px;
-    width:960px;
-    float:left;
-    height:auto;
-}
-.logo_p1{
-    background-position: left;
-    height: 15%;
-    width: 15%;
-}
-.img_footer{
-    width:568px;
-    height:133px;
-    background:  url(../images/footerr.png) no-repeat #75716f;
-}
- 
+    }
+    h4{
+        font-size: 19px !important;
+    }
+    .erp{
+        background-position: center;
+        height:400px;
+        width:960px;
+        float:left;
+        height:auto;
+    }
+    .logo_p1{
+        background-position: left;
+        height: 15%;
+        width: 15%;
+    }
+    .img_footer{
+        width:568px;
+        height:133px;
+        background:  url(../images/footerr.png) no-repeat #75716f;
+    }
+
 }
 
 @media screen and (min-width: 2853px){
- .contentsection{
-    width:100%;
-    float:left;
-    min-height: 400px;
-    height: auto;
+    .contentsection{
+        width:100%;
+        float:left;
+        min-height: 400px;
+        height: auto;
 
-}
+    }
 
-h4{
-    font-size: 18px;
-}
-.erp{
-    background-position: center;
-    min-height:768px;
-    height:auto;
-    width:100%;
-    float:left;
-}
-.logo_p1{
-    background-position: left;
-    height: 15%;
-    width: 15%;
-}
-.img_footer{
-    width:2853px;
-    height:133px;
-    background:  url(../images/footerr.png) no-repeat #75716f;
-}
+    h4{
+        font-size: 18px;
+    }
+    .erp{
+        background-position: center;
+        min-height:768px;
+        height:auto;
+        width:100%;
+        float:left;
+    }
+    .logo_p1{
+        background-position: left;
+        height: 15%;
+        width: 15%;
+    }
+    .img_footer{
+        width:2853px;
+        height:133px;
+        background:  url(../images/footerr.png) no-repeat #75716f;
+    }
 
 }
 @media screen and (min-width: 180px){
- .contentsection{
-    width:100%;
-    float:left;
-    min-height: 550px;
-    height: auto;
+    .contentsection{
+        width:100%;
+        float:left;
+        min-height: 550px;
+        height: auto;
 
-}
+    }
 
-h4{
-    font-size: 9px;
-}
-.erp{
-    background-position: center;
-    height:600px;
-    width:100%;
-    float:left;
-    height:auto;
-}
-.logo_p1{
-    background-position: left;
-    height: 15%;
-    width: 15%;
-}
-.img_footer{
-    width:100%;
-    height:133px;
-    background:  url(../images/footerr.png) no-repeat #75716f;
-}
+    h4{
+        font-size: 9px;
+    }
+    .erp{
+        background-position: center;
+        height:600px;
+        width:100%;
+        float:left;
+        height:auto;
+    }
+    .logo_p1{
+        background-position: left;
+        height: 15%;
+        width: 15%;
+    }
+    .img_footer{
+        width:100%;
+        height:133px;
+        background:  url(../images/footerr.png) no-repeat #75716f;
+    }
 
-.white-box{
-    width: 100%;
-    height:auto;
-    float:left;
-}
+    .white-box{
+        width: 100%;
+        height:auto;
+        float:left;
+    }
 
-/*.ConfigureScrollXTable div.dataTables_wrapper {
-    width: 100% !important;
-    float: left;
-}*/
+    /*.ConfigureScrollXTable div.dataTables_wrapper {
+        width: 100% !important;
+        float: left;
+    }*/
 
 }
 .formulario{
     width: 58%;    
+
 }
 .formulario label{
     text-align: left;
     float:left;
     width: 45%;
-    
+    height: 33px;
+
 }
 .formulario  input,select{
     float:left;
@@ -576,15 +578,20 @@ h4{
 .formulario textarea{
     float:left;
     width: 45%;
-   
+
 }
 .formulario .btn-success,.btn-danger{
     margin-top: 20px;
     float:left;
     width: 24%;
-    
+
     margin-left:1%; 
 }
 .TB{
     color:black;
+}
+td a img{
+   height: 35px;
+   padding: 5px;
+   width: 35px;
 }

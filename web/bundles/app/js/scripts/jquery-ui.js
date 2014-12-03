@@ -14678,7 +14678,7 @@
 
             /*
              * 
-             * EFECTO MODIFICADO POR MOISES VALLE
+             * 
              
              , this.options.hide, function() {
              that._removeTooltip( $( this ) );

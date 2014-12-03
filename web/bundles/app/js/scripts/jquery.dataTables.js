@@ -9167,92 +9167,11 @@
 			 *  @namespace
 			 */
 			"oPaginate": {
-				/**
-				 * Text to use when using the 'full_numbers' type of pagination for the
-				 * button to take the user to the first page.
-				 *  @type string
-				 *  @default First
-				 *  @dtopt Language
-				 * 
-				 *  @example
-				 *    jQuery(document).ready( function() {
-				 *      jQuery('#example').dataTable( {
-				 *        "oLanguage": {
-				 *          "oPaginate": {
-				 *            "sFirst": "First page"
-				 *          }
-				 *        }
-				 *      } );
-				 *    } );
-				 */
-				"sFirst": "<img src='images/btn_inicio.png'>",
-//                                "sFirst": "Primero",
-			
-			
-				/**
-				 * Text to use when using the 'full_numbers' type of pagination for the
-				 * button to take the user to the last page.
-				 *  @type string
-				 *  @default Last
-				 *  @dtopt Language
-				 * 
-				 *  @example
-				 *    jQuery(document).ready( function() {
-				 *      jQuery('#example').dataTable( {
-				 *        "oLanguage": {
-				 *          "oPaginate": {
-				 *            "sLast": "Last page"
-				 *          }
-				 *        }
-				 *      } );
-				 *    } );
-				 */
-				"sLast": "<img src='images/btn_final.png'>",
-//                                "sLast": "&Uacute;ltimo",
-			
-			
-				/**
-				 * Text to use for the 'next' pagination button (to take the user to the 
-				 * next page).
-				 *  @type string
-				 *  @default Next
-				 *  @dtopt Language
-				 * 
-				 *  @example
-				 *    jQuery(document).ready( function() {
-				 *      jQuery('#example').dataTable( {
-				 *        "oLanguage": {
-				 *          "oPaginate": {
-				 *            "sNext": "Next page"
-				 *          }
-				 *        }
-				 *      } );
-				 *    } );
-				 */
-				"sNext": "<img  src='images/btn_adelante.png'>",
-//                                "sNext": "Siguiente",
-			
-				/**
-				 * Text to use for the 'previous' pagination button (to take the user to  
-				 * the previous page).
-				 *  @type string
-				 *  @default Previous
-				 *  @dtopt Language
-				 * 
-				 *  @example
-				 *    jQuery(document).ready( function() {
-				 *      jQuery('#example').dataTable( {
-				 *        "oLanguage": {
-				 *          "oPaginate": {
-				 *            "sPrevious": "Previous page"
-				 *          }
-				 *        }
-				 *      } );
-				 *    } );
-				 */
-                                "sPrevious": "<img src='images/btn_atras.png'>"
-//				"sPrevious": "Anterior",
-			},
+                "sFirst": "<img src='"+prefix+"/bundles/app/images/btn_inicio.png'>",
+                "sLast": "<img  src='"+prefix+"/bundles/app/images/btn_final.png'>",
+                "sNext": "<img  src='"+prefix+"/bundles/app/images/btn_adelante.png'>",
+                "sPrevious": "<img  src='"+prefix+"/bundles/app/images/btn_atras.png'>"
+            },
 		
 			/**
 			 * This string is shown in preference to sZeroRecords when the table is

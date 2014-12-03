@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9; text/html" />
-        <meta charset="utf-8">
-        <link rel="icon" type="image/x-icon"  href="images/favicon.ico"/>
-        <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/estilo.css') }}" />
-        <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/jquery-ui.css') }}" />
-        <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/default.css') }}" />
-        <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/component.css') }}" />
-        <title>Servintegra | {% block title %}{% endblock %}</title>
+        {% set meses = { '1' : 'Enero', '2' : 'Febrero', '3' : 'Marzo', '4' : 'Abril', '5' : 'Mayo', '6' : 'Junio', '7' : 'Julio', '8' : 'Agosto', '9' : 'Septiembre', '10' : 'Octubre', '11' : 'Noviembre', '12' : 'Diciembre'} %}
+            <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9; text/html" />
+            <meta charset="utf-8">
+            <link rel="icon" type="image/x-icon"  href="images/favicon.ico"/>
+            <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/estilo.css') }}" />
+            <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/jquery-ui.css') }}" />
+            <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/default.css') }}" />
+            <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/app/css/component.css') }}" />
+            <title>Servintegra | {% block title %}{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-</head>
-<body id="{% block id '' %}">
-    <div class="divcontainer">
-     <center>
+        </head>
+        <body id="{% block id '' %}">
+            <div class="divcontainer">
+                <center>
     {% block body %}{% endblock %}
-    </center>
-    <footer class="footer">
-        <section class=" w100 img_footer">
-            <div class="w100 L">
-                <img src="{{ asset('bundles/app/images/logo_servin_pequeno1.png') }}" class="L logo_p1 T1 L5 B1"/>
-            </div>
-            <article>
-                <div class="L25 L w50">
-                    <div class="w100 L gris_claro">
-                        <div class="space-line">&nbsp;</div>
-                    </div>
-                    <div class="text-claro text-center">
-                        Copyright 2014 &copy; | GRUPO SERVINTEGRA S.A. de C.V.
-                        Todos los Derechos Reservados
-                    </div>
+                    </center>
+                    <footer class="footer">
+                        <section class=" w100 img_footer">
+                            <div class="w100 L">
+                                <img src="{{ asset('bundles/app/images/logo_servin_pequeno1.png') }}" class="L logo_p1 T1 L5 B1"/>
+                            </div>
+                            <article>
+                                <div class="L25 L w50">
+                                    <div class="w100 L gris_claro">
+                                        <div class="space-line">&nbsp;</div>
+                                    </div>
+                                    <div class="text-claro text-center">
+                                        Copyright 2014 &copy; | GRUPO SERVINTEGRA S.A. de C.V.
+                                        Todos los Derechos Reservados
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </footer>
                 </div>
-            </article>
-        </section>
-    </footer>
-</div>
+                <script>   var prefix = "/servintegra_materiales/web/";</script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery-ui.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/bootstrap.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery.dataTables.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/html5shiv.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/respond.min.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/funciones.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/holder.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery.bpopup.min.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/popups.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery.validate.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/jquery.mask.min.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/validaciones.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/alertas.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/paginacion.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/modernizr.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/modernizr.custom.js') }}"></script>
+                <script src="{{ asset('bundles/app/js/scripts/cbpHorizontalSlideOutMenu.min.js') }}"></script>
+                <script>
+                    var menu = new cbpHorizontalSlideOutMenu(document.getElementById('cbp-hsmenu-wrapper'));
+                 
+                    jQuery(document).ready(function() {
+                        /* jQuery("section").click(function(){        
+                         menu.menuItems[menu.current];    
+                         menu.current=-1
+                         menu.menuBg.style.height = "0px";            
+                         jQuery("li.cbp-hsitem-open").attr({"data-open":"","class":""})           
+                         })*/
+                        jQuery("button").addClass("btn btn-primary");
 
-<script src="{{ asset('bundles/app/js/scripts/jquery.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/jquery-ui.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/bootstrap.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/html5shiv.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/respond.min.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/funciones.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/holder.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/jquery.bpopup.min.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/popups.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/jquery.validate.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/jquery.mask.min.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/validaciones.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/alertas.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/paginacion.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/modernizr.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/modernizr.custom.js') }}"></script>
-<script src="{{ asset('bundles/app/js/scripts/cbpHorizontalSlideOutMenu.min.js') }}"></script>
-<script>
-    var menu = new cbpHorizontalSlideOutMenu(document.getElementById('cbp-hsmenu-wrapper'));
-    
-    jQuery(document).ready(function(){        
-       /* jQuery("section").click(function(){        
-        menu.menuItems[menu.current];    
-        menu.current=-1
-        menu.menuBg.style.height = "0px";            
-        jQuery("li.cbp-hsitem-open").attr({"data-open":"","class":""})           
-        })*/
-        jQuery("button").addClass("btn btn-primary")
-    })
-</script>
+                        jQuery("a").tooltip({
+                        });
+                    })
+                    </script>
 
 
 
 {% block javascript %}{% endblock %}
-</body>
-</html>
+                </body>
+            </html>

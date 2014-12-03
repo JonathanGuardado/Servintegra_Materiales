@@ -65,6 +65,7 @@
 /* Submenu style */
 .cbp-hssubmenu {
 	position: absolute;
+        margin-top: 13%;
 	left: 0;
 	top: 100%;
 	width: 100%;       

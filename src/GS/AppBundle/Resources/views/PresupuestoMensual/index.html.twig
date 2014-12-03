@@ -13,7 +13,7 @@
 </section>
 
 <section>
-    <article class="w100 gris_claro-textura space">&nbsp;</article>
+   
     <article class="w100 gris_claro-textura space">&nbsp;</article>  
     <article class="w100 gris_claro-texturaspace">
         <dd class="R w100">        
@@ -37,11 +37,11 @@
     </div>
 {% endfor %}
     <div class="w100" style="height:70px">
-        <h1 class="L L3">Listado Detalles Mensuales</h1><br/>
+        <h1 class="L ">Listado Detalles Mensuales</h1><br/>
     </div>
     <div class="w100">
-        <h3 class="L L3 ">Proyecto :<span style="color:red">{{ proyecto.nombreProyecto }}</span></h3>
-        <h3 class="L L3 ">Presupuesto Anual :<span style="color:red">{{ proyecto.presupuesto }}</span></h3>
+        <h3 class="L ">Proyecto :<span style="color:red">{{ proyecto.nombreProyecto }}</span></h3>
+        <h3 class="L L3 ">Presupuesto del Proyecto :<span style="color:red">{{ proyecto.presupuesto }}</span></h3>
         <h3 class="L L3 ">Monto Usados :<span style="color:red">{{ detalleProyecto.saldoUsado }}</span></h3>
         <h3 class="L L3 ">Monto Disponible :<span style="color:red">{{ detalleProyecto.saldoDisponible }}</span></h3>
     </div>
@@ -74,13 +74,10 @@
                                 <td>{% if entity.fechaModificacion %}{{ entity.fechaModificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
                                 <td>{{ entity.usuarioModificacion }}</td>               
                                 <td>
-                                    <ul style="list-style:none">
-                                        <li>
-                                            <a class="btn btn-info w60" href="{{ path('presupuestomensual_show', { 'id': entity.idPresupuestoMensual }) }}">Ver detalle</a>
-                                        </li>
-                                        <li>
-                                            <a class="btn btn-warning T1 w60" href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}">Editar</a>
-                                        </li>
+                                    <a title="Ver Informacion" href="{{ path('presupuestomensual_show', { 'id': entity.idPresupuestoMensual }) }}"><img src="{{ asset('bundles/app/images/info.png') }}"  border='0'/></a>
+
+                                    <a title="Editar" href="{{ path('presupuestomensual_edit', { 'id': entity.idPresupuestoMensual }) }}"><img src="{{ asset('bundles/app/images/edit.png') }}"   border='0'/></a>
+
                                     </ul>
                                 </td>
                             </tr>
@@ -93,5 +90,5 @@
 
     </div> <!-- /container -->
 
-  
+
     {% endblock %}

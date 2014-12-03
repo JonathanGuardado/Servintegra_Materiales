@@ -5220,6 +5220,7 @@ button.close {
 .tooltip {
     position: absolute;
     z-index: 1030;
+    border-radius: 5px;    
     display: block;
     font-size: 12px;
     line-height: 1.4;
@@ -5229,14 +5230,15 @@ button.close {
 }
 .tooltip.in {
     filter: alpha(opacity=90);
-    opacity: .9;
+    opacity: 1;
 }
 .tooltip.top {
-    padding: 5px 0;
+    padding: 0px 0;
     margin-top: -3px;
+    margin-buttom: -3px;
 }
 .tooltip.right {
-    padding: 0 5px;
+    padding: 0 0px;
     margin-left: 3px;
 }
 .tooltip.bottom {
@@ -5244,7 +5246,7 @@ button.close {
     margin-top: 3px;
 }
 .tooltip.left {
-    padding: 0 5px;
+    padding: 0 0x;
     margin-left: -3px;
 }
 .tooltip-inner {
@@ -5253,11 +5255,12 @@ button.close {
     color: #fff;
     text-align: center;
     text-decoration: none;
-    background-color: #000;
+    background-color: #76716f;
     border-radius: 4px;
 }
 .tooltip-arrow {
     position: absolute;
+    margin-bottom: -5px;
     width: 0;
     height: 0;
     border-color: transparent;

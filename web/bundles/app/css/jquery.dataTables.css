@@ -10,6 +10,7 @@ table.dataTable thead{
     background: #f48f35;
 }
 table.dataTable thead th{
+    text-align: center;
     background: #76716f;
     border-right: 1px solid #fbfbfb;
     min-width: 150px;

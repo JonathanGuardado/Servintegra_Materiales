@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-
+    
     var items = jQuery('ul.menu_we>li');
     items.addClass('fontsize');
     items.click(function() {
@@ -69,12 +69,13 @@ var configuraciontablepaginate = function(table) {
             "sInfoEmpty": "Mostrando de 0 a 0 de 0 registros",
             "sInfoFiltered": "(se ha filtrado de un total de _MAX_ registros)",
             "sEmptyTable": "Tabla vac&iacute;a",
-            "oPaginate": {
-                "sFirst": "<img  src='images/btn_inicio.png'>",
-                "sLast": "<img  src='images/btn_final.png'>",
-                "sNext": "<img  src='images/btn_adelante.png'>",
-                "sPrevious": "<img  src='images/btn_atras.png'>"
-            }
+          "oPaginate": {
+                "sFirst": "<img src='"+prefix+"/bundles/app/images/btn_inicio.png'>",
+                "sLast": "<img  src='"+prefix+"/bundles/app/images/btn_final.png'>",
+                "sNext": "<img  src='"+prefix+"/bundles/app/images/btn_adelante.png'>",
+                "sPrevious": "<img  src='"+prefix+"/bundles/app/images/btn_atras.png'>"
+            },
+		
         }
     });
 };
